@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<IDataXMLCoder version="1.0">
+  <record javaclass="com.wm.util.Values">
+    <record name="pipeline" javaclass="com.wm.data.ISMemDataImpl">
+      <value name="output">1</value>
+      <value name="additional">xxx</value>
+    </record>
+  </record>
+</IDataXMLCoder>

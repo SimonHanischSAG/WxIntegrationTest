@@ -1,0 +1,7 @@
+testclient.connection=WxIntegrationTestClientConnection
+testclient.ControllerToAllClientsOfClusterTopic=ControllerToAllClientsOfClusterTopic
+testclient.ControllerToOneClientOfClusterTopic=ControllerToOneClientOfClusterTopic
+testclient.ClientToControllerTopic=ClientToControllerTopic
+
+#testclient.messageSelector=clusterName = 'cluster1' OR clusterName IS NULL
+#testclient.clusterName=cluster1

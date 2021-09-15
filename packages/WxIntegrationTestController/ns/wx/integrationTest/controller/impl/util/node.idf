@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Values version="2.0">
+  <value name="node_type">interface</value>
+  <value name="node_subtype">unknown</value>
+  <value name="node_nsName">wx.integrationTest.controller.impl.util</value>
+  <value name="is_public">false</value>
+  <value name="shared">DQpwcml2YXRlIHN0YXRpYyBsb25nIHBvbGxpbmdJbnRlcnZhbCA9IDEwMDA7DQpwcml2YXRlIHN0
+YXRpYyBpbnQgcG9sbGluZ0NvdW50TWF4ID0gMjA7DQpwcml2YXRlIHN0YXRpYyBDb25jdXJyZW50
+SGFzaE1hcDxTdHJpbmcsIFJlc3BvbnNlPiBhcnJpdmVkUmVzcG9uc2VzID0gbmV3IENvbmN1cnJl
+bnRIYXNoTWFwPFN0cmluZywgUmVzcG9uc2U+KCk7DQoNCnByaXZhdGUgc3RhdGljIHZvaWQgY2xl
+YW5VcEFycml2ZWRSZXNwb25zZXMoKSB7DQoJLy8gbG9nKCJTSVRDOiBzdGFydCBjbGVhbnVwIik7
+DQoJbG9uZyBjdXJyZW50RGF0ZSA9IG5ldyBEYXRlKCkuZ2V0VGltZSgpOw0KCVNldDxFbnRyeTxT
+dHJpbmcsIFJlc3BvbnNlPj4gc2V0ID0gYXJyaXZlZFJlc3BvbnNlcy5lbnRyeVNldCgpOw0KCWZv
+ciAoRW50cnk8U3RyaW5nLCBSZXNwb25zZT4gZW50cnkgOiBzZXQpIHsNCgkJaWYgKChjdXJyZW50
+RGF0ZSAtIGVudHJ5LmdldFZhbHVlKCkuZGF0ZS5nZXRUaW1lKCkpID4gMiAqIHBvbGxpbmdJbnRl
+cnZhbCkgew0KCQkJYXJyaXZlZFJlc3BvbnNlcy5yZW1vdmUoZW50cnkuZ2V0S2V5KCkpOw0KCQkJ
+Ly8gbG9nKCJTSVRDOiByZW1vdmVkIik7DQoJCX0NCgl9DQoJLy8gbG9nKCJTSVRDOiBlbmQgY2xl
+YW51cCIpOw0KfQ0KDQpwcml2YXRlIHN0YXRpYyBjbGFzcyBSZXNwb25zZSB7DQoNCglwcml2YXRl
+IERhdGUgZGF0ZTsNCglwcml2YXRlIElEYXRhIGdlbmVyaWNSZXNwb25zZTsNCg0KfQ0KDQpwdWJs
+aWMgc3RhdGljIHZvaWQgbG9nKFN0cmluZyBtZXNzYWdlKSB7DQoJLy8gaW5wdXQNCglJRGF0YSBp
+bnB1dCA9IElEYXRhRmFjdG9yeS5jcmVhdGUoKTsNCglJRGF0YUN1cnNvciBpbnB1dEN1cnNvciA9
+IGlucHV0LmdldEN1cnNvcigpOw0KCUlEYXRhVXRpbC5wdXQoaW5wdXRDdXJzb3IsICJtZXNzYWdl
+IiwgbWVzc2FnZSk7DQoJaW5wdXRDdXJzb3IuZGVzdHJveSgpOw0KDQoJdHJ5IHsNCgkJU2Vydmlj
+ZS5kb0ludm9rZSgicHViLmZsb3ciLCAiZGVidWdMb2ciLCBpbnB1dCk7DQoJfSBjYXRjaCAoRXhj
+ZXB0aW9uIGUpIHsNCgl9DQp9DQoNCg==</value>
+  <value name="encodeutf8">true</value>
+  <value name="extends"></value>
+  <array name="implements" type="value" depth="1">
+  </array>
+  <array name="imports" type="value" depth="1">
+    <value>java.util.Date</value>
+    <value>java.util.Map.Entry</value>
+    <value>java.util.Set</value>
+    <value>java.util.Vector</value>
+    <value>java.util.concurrent.ConcurrentHashMap</value>
+    <value>java.util.function.BiConsumer</value>
+    <value>com.softwareag.util.IDataMap</value>
+  </array>
+</Values>

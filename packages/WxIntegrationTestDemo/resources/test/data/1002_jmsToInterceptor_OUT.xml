@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<IDataXMLCoder version="1.0">
+  <record javaclass="com.wm.util.Values">
+    <record name="JMSMessage" javaclass="com.wm.data.ISMemDataImpl">
+      <record name="properties" javaclass="com.wm.data.ISMemDataImpl">
+        <number name="JMSXDeliveryCount" type="java.lang.Integer">1</number>
+      </record>
+      <record name="header" javaclass="com.wm.data.ISMemDataImpl">
+        <null name="JMSCorrelationID"/>
+        <number name="JMSDeliveryMode" type="java.lang.Integer">2</number>
+        <value name="JMSDestination">DemoTestedAToDemoTestedBQueue</value>
+        <number name="JMSExpiration" type="java.lang.Long">0</number>
+        <number name="JMSPriority" type="java.lang.Integer">4</number>
+        <jboolean name="JMSRedelivered">false</jboolean>
+        <value name="JMSReplyTo">null</value>
+        <value name="JMSType">testType</value>
+      </record>
+      <record name="body" javaclass="com.wm.data.ISMemDataImpl">
+        <value name="string">test</value>
+      </record>
+    </record>
+  </record>
+</IDataXMLCoder>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<IDataXMLCoder version="1.0">
+  <record javaclass="com.wm.data.ISMemDataImpl">
+    <value name="testId">1002</value>
+    <record name="sendJMSMessageRequest" javaclass="com.wm.data.ISMemDataImpl">
+      <value name="connectionAliasName">WxIntegrationTestClientConnection</value>
+      <value name="destinationName">DemoTestedAToDemoTestedBQueue</value>
+      <value name="destinationType">QUEUE</value>
+    </record>
+    <record name="JMSMessage" javaclass="com.wm.data.ISMemDataImpl">
+      <record name="header" javaclass="com.wm.data.ISMemDataImpl">
+        <value name="JMSType">testType</value>
+      </record>
+      <record name="body" javaclass="com.wm.data.ISMemDataImpl">
+        <value name="string">test</value>
+      </record>
+    </record>
+    <record name="requestTargetJMS" javaclass="com.wm.data.ISMemDataImpl">
+      <value name="clusterName">cluster1</value>
+    </record>
+    <record name="registerInterceptorRequest" javaclass="com.wm.data.ISMemDataImpl">
+      <value name="serviceName">wx.integrationTest.demoTestedB.impl.resourceX:handleResourceX</value>
+      <value name="timeoutForInterceptionInSeconds">60</value>
+    </record>
+    <record name="requestTargetInterceptor" javaclass="com.wm.data.ISMemDataImpl">
+      <value name="clusterName">cluster1</value>
+    </record>
+  </record>
+</IDataXMLCoder>

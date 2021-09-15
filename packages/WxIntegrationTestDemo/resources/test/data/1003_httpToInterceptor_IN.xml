@@ -7,7 +7,7 @@
       <value name="clusterName">cluster1</value>
     </record>
     <record name="callHttpRequest" javaclass="com.wm.data.ISMemDataImpl">
-      <value name="url">http://localhost:10055/rest/wx.integrationTest.demoTestedA.pub.ws.resourceX</value>
+      <value name="url">http://localhost:5555/rest/wx.integrationTest.demoTestedA.pub.ws.resourceX</value>
       <value name="method">get</value>
       <value name="loadAs">string</value>
     </record>

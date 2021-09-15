@@ -83,51 +83,6 @@ public final class util
 
 
 
-	public static final void documentToString (IData pipeline)
-        throws ServiceException
-	{
-		// --- <<IS-START(documentToString)>> ---
-		// @sigtype java 3.5
-		// [i] record:0:required document
-		// [i] field:0:optional keySorrtingLocale
-		// [o] field:0:required string
-		final IDataCursor crsr = pipeline.getCursor();
-		final IData document = IDataUtil.getIData(crsr, "document");
-		if (document == null) {
-			throw new NullPointerException("Missing parameter: document");
-		}
-		final String keySortingLocaleStr = IDataUtil.getString(crsr, "keySortingLocale");
-		final StringStreamer stringStreamer = new StringStreamer();
-		if (keySortingLocaleStr != null  &&  keySortingLocaleStr.length() > 0) {
-			Locale locale;
-			Throwable th = null;
-			try {
-				locale = Locale.forLanguageTag(keySortingLocaleStr);
-			} catch (Throwable t) {
-				locale = null;
-				th = t;
-			}
-			if (locale == null) {
-				if (th == null) {
-					throw new IllegalArgumentException("Invalid parameter keySortingLocale: " + keySortingLocaleStr);
-				} else {
-					throw new IllegalArgumentException("Invalid parameter keySortingLocale: " + keySortingLocaleStr, th);
-				}
-			} else {
-				stringStreamer.setKeySortingLocale(locale);
-			}
-		}
-		final StringBuilder sb = new StringBuilder();
-		stringStreamer.toString(sb, document, true);
-		IDataUtil.put(crsr, "string", sb.toString());
-		crsr.destroy();
-		// --- <<IS-END>> ---
-
-                
-	}
-
-
-
 	public static final void getCurrentPipeline (IData pipeline)
         throws ServiceException
 	{

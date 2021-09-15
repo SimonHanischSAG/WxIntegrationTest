@@ -9,7 +9,6 @@
     <record name="header" javaclass="com.wm.util.Values">
       <record name="lines" javaclass="com.wm.util.Values">
         <value name="Content-Type">text/html; charset=UTF-8</value>
-        <value name="Content-Length">257</value>
       </record>
       <value name="status">200</value>
       <value name="statusMessage">OK</value>

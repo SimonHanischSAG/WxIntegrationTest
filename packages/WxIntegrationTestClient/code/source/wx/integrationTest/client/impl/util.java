@@ -128,6 +128,29 @@ public final class util
 
 
 
+	public static final void getCurrentPipeline (IData pipeline)
+        throws ServiceException
+	{
+		// --- <<IS-START(getCurrentPipeline)>> ---
+		// @sigtype java 3.5
+		// [i] field:0:required test
+		// [o] record:0:required currentPipeline
+		IDataCursor pipelineCursor = pipeline.getCursor();		
+		try{
+			IData currentPipeline = IDataUtil.deepClone(pipeline);
+			IDataUtil.put( pipelineCursor, "currentPipeline", currentPipeline );
+		} 
+		catch( Exception e){			
+		}		
+		pipelineCursor.destroy();		
+			
+		// --- <<IS-END>> ---
+
+                
+	}
+
+
+
 	public static final void getDifferenceOfPipelines (IData pipeline)
         throws ServiceException
 	{
@@ -342,6 +365,7 @@ public final class util
 		}
 	}
 	
+		
 		
 	// --- <<IS-END-SHARED>> ---
 }

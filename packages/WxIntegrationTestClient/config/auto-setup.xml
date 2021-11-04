@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+	<autoConfig>
+	    <messaging>
+            <integrationServer>
+            	<jmsTrigger>
+    				<triggerName>wx.integrationTest.client.trigger:jmsControllerToAllClientsOfClusterTopicTrigger</triggerName>
+    				<package>WxIntegrationTestClient</package>
+    				<aliasName>${testclient.connection}</aliasName>
+    				<isConcurrent>true</isConcurrent>
+    				<maxExecutionThreads>30</maxExecutionThreads>
+    				<destinations>
+    					<destination>ControllerToAllClientsOfClusterTopic</destination>
+    					<destinationType>Topic</destinationType>
+    					<durableSubscriberName>WxIntegrationTestClient_${testclient.hostname}_Subscriber</durableSubscriberName>
+    					<messageSelector>${testclient.messageSelector}</messageSelector>
+    				</destinations>
+    				<routingRules>
+    					<ruleName>Rule1</ruleName>
+    					<serviceName>wx.integrationTest.client.impl:handleControllerMessage</serviceName>
+    				</routingRules>
+    				<enabled>true</enabled>
+    				<maxRetryAttempts>2000000000</maxRetryAttempts>
+    				<retryInterval>30000</retryInterval>
+    				<suspendOnError>false</suspendOnError>
+    				<onTransientError>Suspend and Retry Later/Suspend and Recover</onTransientError>
+    			</jmsTrigger>
+    			
+            	<jmsTrigger>
+    				<triggerName>wx.integrationTest.client.trigger:jmsControllerToOneClientOfClusterTopicTrigger</triggerName>
+    				<package>WxIntegrationTestClient</package>
+    				<aliasName>${testclient.connection}</aliasName>
+    				<isConcurrent>true</isConcurrent>
+    				<maxExecutionThreads>10</maxExecutionThreads>
+    				<destinations>
+    					<destination>ControllerToOneClientOfClusterTopic</destination>
+    					<destinationType>Topic</destinationType>
+    					<durableSubscriberName>WxIntegrationTestClient_${testclient.clusterName}_Subscriber</durableSubscriberName>
+    					<messageSelector>${testclient.messageSelector}</messageSelector>
+    				</destinations>
+    				<routingRules>
+    					<ruleName>Rule1</ruleName>
+    					<serviceName>wx.integrationTest.client.impl:handleControllerMessage</serviceName>
+    				</routingRules>
+    				<enabled>true</enabled>
+    				<maxRetryAttempts>2000000000</maxRetryAttempts>
+    				<retryInterval>30000</retryInterval>
+    				<suspendOnError>false</suspendOnError>
+    				<onTransientError>Suspend and Retry Later/Suspend and Recover</onTransientError>
+    			</jmsTrigger>
+
+            </integrationServer>
+        </messaging>
+    </autoConfig>
+</config>

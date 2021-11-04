@@ -40,4 +40,24 @@
             </expected>
         </service>
     </webMethodsTestCase>
+    <webMethodsTestCase description="Auto generated test for service wx.integrationTest.controller.pub.standardtests:testCallHttp" name="1999: Test for wx.integrationTest.controller.pub.standardtests:testCallHttp">
+        <service folder="wx.integrationTest.controller.pub.standardtests" name="testCallHttp">
+            <input>
+                <file filename="resources/test/data/1999_callHttp_IN.xml"/>
+            </input>
+            <expected>
+                <file filename="resources/test/data/1999_callHttp_OUT.xml"/>
+            </expected>
+        </service>
+    </webMethodsTestCase>
+    <webMethodsTestCase description="Auto generated test for service wx.integrationTest.controller.pub.standardtests:testCallHttp" name="2000: Test for wx.integrationTest.controller.pub.standardtests:testCallHttp">
+        <service folder="wx.integrationTest.controller.pub.standardtests" name="testCallHttp">
+            <input>
+                <file filename="resources/test/data/2000_callHttp_IN.xml"/>
+            </input>
+            <expected>
+                <file filename="resources/test/data/2000_callHttp_OUT.xml"/>
+            </expected>
+        </service>
+    </webMethodsTestCase>
 </webMethodsTestSuite>

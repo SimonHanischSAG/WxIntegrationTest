@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<IDataXMLCoder version="1.0">
+  <record javaclass="com.wm.util.Values">
+    <record name="body" javaclass="com.wm.util.Values">
+      
+    </record>
+    <value name="encodedURL">http://localhost:10055/invoke/wm.server:ping</value>
+    <record name="header" javaclass="com.wm.util.Values">
+      <record name="lines" javaclass="com.wm.util.Values">
+        <value name="Content-Type">text/html; charset=UTF-8</value>
+        <value name="Content-Length">158</value>
+      </record>
+      <value name="status">200</value>
+      <value name="statusMessage">OK</value>
+    </record>
+  </record>
+</IDataXMLCoder>

@@ -9,7 +9,9 @@
   <value name="is_public">false</value>
   <value name="trigger_type">jms-trigger</value>
   <record name="trigger" javaclass="com.wm.util.Values">
+    <value name="serialSuspendOnError">false</value>
     <value name="concurrent">true</value>
+    <value name="ordering">0</value>
     <value name="auditOption">0</value>
     <record name="auditSettings" javaclass="com.wm.util.Values">
       <value name="document_data">0</value>
@@ -22,13 +24,14 @@
       <value name="delayInterval">30000</value>
       <value name="onRedeliveryFailure">1</value>
     </record>
+    <value name="joinTimeout">86400000</value>
     <value name="maxConcurrentThreads">100</value>
     <value name="inDoubtDetection">false</value>
     <value name="resolveWithHistory">false</value>
     <value name="resolutionHistoryTTL">7200000</value>
     <value name="uniqueId">QJWiPQj2Fog8Z2Hj4DP8kJumaqo=</value>
     <value name="executeUser">Administrator</value>
-    <value name="aliasName">WxIntegrationTestClientConnection</value>
+    <value name="aliasName">DEFAULT_IS_JMS_CONNECTION</value>
     <number name="jmsTriggerType" type="Integer">0</number>
     <Boolean name="enabled">true</Boolean>
     <value name="prefetchSize">10</value>
@@ -38,8 +41,6 @@
     <value name="acknowledgeMode">2</value>
     <value name="includeOriginalMessage">false</value>
     <value name="joinType">3</value>
-    <value name="joinTimeout">86400000</value>
-    <value name="serialSuspendOnError">false</value>
     <array name="routingRules" type="record" depth="1">
       <record javaclass="com.wm.util.Values">
         <value name="ruleName">Rule1</value>
@@ -56,8 +57,9 @@
         <Boolean name="durableSubscriberNoLocal">false</Boolean>
       </record>
     </array>
-    <number name="totalThrottledSessions" type="Integer">0</number>
-    <value name="aliasType">jndi</value>
-    <value name="priorityEnabled">false</value>
   </record>
+  <number name="LOCK_STATUS" type="Integer">2</number>
+  <null name="LOCK_INFO"/>
+  <null name="DEPENDENT_LOCKS"/>
+  <value name="status">true</value>
 </Values>

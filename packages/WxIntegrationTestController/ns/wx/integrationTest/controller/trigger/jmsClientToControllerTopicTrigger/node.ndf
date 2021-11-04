@@ -9,7 +9,9 @@
   <value name="is_public">false</value>
   <value name="trigger_type">jms-trigger</value>
   <record name="trigger" javaclass="com.wm.util.Values">
+    <value name="serialSuspendOnError">false</value>
     <value name="concurrent">false</value>
+    <value name="ordering">0</value>
     <value name="auditOption">0</value>
     <record name="auditSettings" javaclass="com.wm.util.Values">
       <value name="document_data">0</value>
@@ -22,13 +24,14 @@
       <value name="delayInterval">10000</value>
       <value name="onRedeliveryFailure">0</value>
     </record>
+    <value name="joinTimeout">86400000</value>
     <value name="maxConcurrentThreads">1</value>
     <value name="inDoubtDetection">false</value>
     <value name="resolveWithHistory">false</value>
     <value name="resolutionHistoryTTL">7200000</value>
     <value name="uniqueId">/f8llN3KesIJxNKtqIgSQMQ//d8=</value>
     <value name="executeUser">Administrator</value>
-    <value name="aliasName">WxIntegrationTestControllerConnection</value>
+    <value name="aliasName">DEFAULT_IS_JMS_CONNECTION</value>
     <number name="jmsTriggerType" type="Integer">0</number>
     <Boolean name="enabled">true</Boolean>
     <value name="prefetchSize">10</value>
@@ -38,8 +41,6 @@
     <value name="acknowledgeMode">2</value>
     <value name="includeOriginalMessage">false</value>
     <value name="joinType">3</value>
-    <value name="joinTimeout">86400000</value>
-    <value name="serialSuspendOnError">false</value>
     <array name="routingRules" type="record" depth="1">
       <record javaclass="com.wm.util.Values">
         <value name="ruleName">Rule1</value>
@@ -57,4 +58,8 @@
       </record>
     </array>
   </record>
+  <number name="LOCK_STATUS" type="Integer">2</number>
+  <null name="LOCK_INFO"/>
+  <null name="DEPENDENT_LOCKS"/>
+  <value name="status">true</value>
 </Values>

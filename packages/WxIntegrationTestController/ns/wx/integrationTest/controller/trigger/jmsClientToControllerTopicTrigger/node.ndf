@@ -31,7 +31,7 @@
     <value name="resolutionHistoryTTL">7200000</value>
     <value name="uniqueId">/f8llN3KesIJxNKtqIgSQMQ//d8=</value>
     <value name="executeUser">Administrator</value>
-    <value name="aliasName">DEFAULT_IS_JMS_CONNECTION</value>
+    <value name="aliasName">WxIntegrationTestController_IS_JMS_CONNECTION</value>
     <number name="jmsTriggerType" type="Integer">0</number>
     <Boolean name="enabled">true</Boolean>
     <value name="prefetchSize">10</value>
@@ -58,8 +58,4 @@
       </record>
     </array>
   </record>
-  <number name="LOCK_STATUS" type="Integer">2</number>
-  <null name="LOCK_INFO"/>
-  <null name="DEPENDENT_LOCKS"/>
-  <value name="status">true</value>
 </Values>

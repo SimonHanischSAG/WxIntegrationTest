@@ -4,7 +4,7 @@
   <record javaclass="com.wm.data.ISMemDataImpl">
     <value name="testId">2000</value>
     <record name="callHttpRequest" javaclass="com.wm.data.ISMemDataImpl">
-      <value name="url">http://localhost:10055/invoke/wm.server:ping</value>
+      <value name="url">http://localhost:5555/invoke/wm.server:ping</value>
       <value name="method">get</value>
       <value name="loadAs">string</value>
     </record>

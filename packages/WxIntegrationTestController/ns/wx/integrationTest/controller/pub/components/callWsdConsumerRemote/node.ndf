@@ -157,12 +157,12 @@
 Then you have to set the following mandatory fields in case of a provider based on an IS service (compare with the connector service of the consumer):
 
 address: 					http...
-wsdName: 					Full qualified name of WSD consumer (e.g. com.lidl.satellite.initialisation.ws:getTransferData)
+wsdName: 					Full qualified name of WSD consumer (e.g. com.company.satellite.initialisation.ws:getTransferData)
 wsdBinderName: 			&lt;namespace&gt;_&lt;WsdName&gt;_Binder
 wsdOperationName: 		&lt;serviceName&gt;
-targetInputSignature: 		Input from docTypes of consumer (e.g. com.lidl.satellite.initialisation.ws.getTransferData_.docTypes:lookupClientRoutingConfiguration_PortType_lookupClientRoutingConfiguration_Input
+targetInputSignature: 		Input from docTypes of consumer (e.g. com.company.satellite.initialisation.ws.getTransferData_.docTypes:lookupClientRoutingConfiguration_PortType_lookupClientRoutingConfiguration_Input
 )
-targetOutputSignature: 		Output from docTypes of consumer (e.g. com.lidl.satellite.initialisation.ws.getTransferData_.docTypes:lookupClientRoutingConfiguration_PortType_lookupClientRoutingConfiguration_Output)
+targetOutputSignature: 		Output from docTypes of consumer (e.g. com.company.satellite.initialisation.ws.getTransferData_.docTypes:lookupClientRoutingConfiguration_PortType_lookupClientRoutingConfiguration_Output)
 method/localName: 		&lt;serviceName&gt;
 soapAction:				&lt;namespace&gt;_&lt;WsdName&gt;_Binder_&lt;serviceName&gt;
 soapProtocol: 				Choose from picklist

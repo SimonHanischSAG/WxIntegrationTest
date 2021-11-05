@@ -3866,10 +3866,10 @@
 <MAPDELETE FIELD="/JMSMessage;2;0">
 </MAPDELETE>
 
-<MAPDELETE FIELD="/metaData;4;0;com.lidl.lcl.canonical:metaData">
+<MAPDELETE FIELD="/interceptionResponse;4;0;wx.integrationTest.doc.response:interceptionResponse">
 </MAPDELETE>
 
-<MAPDELETE FIELD="/interceptionResponse;4;0;wx.integrationTest.doc.response:interceptionResponse">
+<MAPDELETE FIELD="/metaData;4;0;wx.resilience.doc:metaData">
 </MAPDELETE>
 </MAP>
 </INVOKE>

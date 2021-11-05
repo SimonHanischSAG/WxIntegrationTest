@@ -4,4 +4,4 @@ testclient.connection=DEFAULT_IS_JMS_CONNECTION
 
 testclient.messageSelector=clusterName = 'cluster1' OR clusterName IS NULL
 testclient.clusterName=cluster1
-testclient.hostname=${sys:wxConfig.hostname}
+testclient.hostname=localhost

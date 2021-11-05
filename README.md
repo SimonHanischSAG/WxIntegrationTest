@@ -10,10 +10,12 @@ MANY THANKS TO LIDL AND SCHWARZ IT, who kindly allowed to provide the template f
 <h2>Architecture</h2>
 
 <ol>
-  <li>Use your own package like WxIntegrationTestDemo to place your (WmTestSuite) tests. Deploy that package on your "testing IS" (= the "controller")</li>
-  <li>Reuse the services of WxIntegrationTestController to implement these tests. Deploy that package on your "testing IS" (= the "controller")</li>
-  <li>In behind WxIntegrationTestClient (and maybe WxInterceptor) is used in order to run the tests on the target IS clusters.</li>
+  <li>Use your own package like WxIntegrationTestDemo to place your (WmTestSuite) tests. Deploy that package on your "testing IS node" (= the "controller")</li>
+  <li>Reuse the services of WxIntegrationTestController to implement these tests. Deploy that package on your "testing IS node" (= the "controller")</li>
+  <li>In behind WxIntegrationTestClient (and maybe WxInterceptor) is deployed and used on the tested IS clusters (= the clients) in order to run the tests directly there.</li>
 </ol>
+
+Of course the "testing IS node" and the "tested IS cluster" can be one and the same server.
 
 <h2>How to use (basic configuration)</h2>
 

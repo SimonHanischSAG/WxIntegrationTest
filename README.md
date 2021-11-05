@@ -61,3 +61,7 @@ Reload the packages
 
 <h4>Initialize in case of WxConfigLight</h4>
 If you are using WxConfigLight you have to run http://localhost:5555/invoke/wx.config.admin:replaceVariablesWithGlobalFile?wxConfigPkgName=WxIntegrationTestClient in order to load the keys of the package into the necessary Global Variables. WxConfig will do that automatically.
+
+<h4>Run demo tests</h4>
+
+Open WxIntegrationTestDemo\resources\test\integrationTests-DEV.xml in Designer and run the "Run Suite". In order to run every test successfully you have to configure the ACL Anonymous at wx.integrationTest.demoTestedA.pub.ws.resourceX:_get.

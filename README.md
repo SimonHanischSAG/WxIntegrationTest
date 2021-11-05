@@ -7,7 +7,7 @@ It is designed for usage together with the official packages WxConfig (or the fr
 
 MANY THANKS TO LIDL AND SCHWARZ IT, who kindly allowed to provide the template for this package and make it public.
 
-<h2>Architecture</h2>
+<h1>Architecture</h1>
 
 <ol>
   <li>Use your own package like WxIntegrationTestDemo to place your (WmTestSuite) tests. Deploy that package on your "testing IS node" (= the "controller")</li>
@@ -17,7 +17,9 @@ MANY THANKS TO LIDL AND SCHWARZ IT, who kindly allowed to provide the template f
 
 Of course the "testing IS node" and the "tested IS cluster" can be one and the same server.
 
-<h2>How to use (basic configuration)</h2>
+<h1>How to use</h1>
+
+<h2>Installation</h2>
 
 <h3>Provide WxInterceptor</h3>
 compare with above
@@ -28,7 +30,7 @@ compare with above
 <h3>Provide WxResilience</h3>
 compare with above
 
-<h4>Setup UM stuff</h4>
+<h3>Setup UM stuff</h3>
 
 Use EnterpriseManager to access the UM referenced by DEFAULT_IS_JMS_CONNECTION:
 
@@ -64,6 +66,7 @@ Reload the packages
 <h4>Initialize in case of WxConfigLight</h4>
 If you are using WxConfigLight you have to run http://localhost:5555/invoke/wx.config.admin:replaceVariablesWithGlobalFile?wxConfigPkgName=WxIntegrationTestClient in order to load the keys of the package into the necessary Global Variables. WxConfig will do that automatically.
 
-<h4>Run demo tests</h4>
+<h2>Execution</h2>
+<h3>Run demo tests</h3>
 
 Open WxIntegrationTestDemo\resources\test\integrationTests-DEV.xml in Designer and run the "Run Suite". In order to run every test successfully you have to configure the ACL Anonymous at wx.integrationTest.demoTestedA.pub.ws.resourceX:_get.

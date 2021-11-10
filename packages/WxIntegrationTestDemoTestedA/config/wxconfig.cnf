@@ -1,0 +1,8 @@
+wx.config.env.TEST=wxconfig-TEST.cnf
+wx.config.env.TEST=wxconfig-TEST.cnf
+wx.config.env.PROD=../../../config/packages/WxIntegrationTestDemoTestedA/wxconfig-PROD.cnf
+wx.config.env.PROD=../../../config/packages/WxIntegrationTestDemoTestedA/wxconfig-PROD.cnf
+
+myKeyInGobalFile=global
+
+

@@ -13,7 +13,7 @@
     					<destination>ControllerToAllClientsOfClusterTopic</destination>
     					<destinationType>Topic</destinationType>
     					<durableSubscriberName>WxIntegrationTestClient_${testclient.hostname}_Subscriber</durableSubscriberName>
-    					<messageSelector>${testclient.messageSelector}</messageSelector>
+    					<messageSelector>clusterName = '${testclient.clusterName}' OR clusterName IS NULL</messageSelector>
     				</destinations>
     				<routingRules>
     					<ruleName>Rule1</ruleName>
@@ -36,7 +36,7 @@
     					<destination>ControllerToOneClientOfClusterTopic</destination>
     					<destinationType>Topic</destinationType>
     					<durableSubscriberName>WxIntegrationTestClient_${testclient.clusterName}_Subscriber</durableSubscriberName>
-    					<messageSelector>${testclient.messageSelector}</messageSelector>
+    					<messageSelector>clusterName = '${testclient.clusterName}' OR clusterName IS NULL</messageSelector>
     				</destinations>
     				<routingRules>
     					<ruleName>Rule1</ruleName>

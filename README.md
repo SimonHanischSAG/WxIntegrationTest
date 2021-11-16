@@ -15,9 +15,9 @@ MANY THANKS TO LIDL AND SCHWARZ IT, who kindly allowed to provide the template f
   <li>In behind WxIntegrationTestClient (and maybe WxInterceptor) is deployed and used on the tested IS clusters (= the clients) in order to run the tests directly there.</li>
 </ol>
 
-Of course the "testing IS node" and the "tested IS cluster" can be one and the same server.
+In behind all the communication between Controller and Client is handled by JMS messages. The Controller itself is not directly starting a test, it will always send a command to the Client for doing that. That loose coupling gives you more flexibility. Of course the "testing IS node" and the "tested IS cluster" can be physically one and the same server.
 
-<h1>How to use</h1>
+<h1>How to setup</h1>
 
 <h2>Installation</h2>
 
@@ -70,3 +70,40 @@ If you are using WxConfigLight you have to run http://localhost:5555/invoke/wx.c
 <h3>Run demo tests</h3>
 
 Open WxIntegrationTestDemo\resources\test\integrationTests-DEV.xml in Designer and run the "Run Suite". In order to run every test successfully you have to configure the ACL Anonymous at wx.integrationTest.demoTestedA.pub.ws.resourceX:_get.
+
+<h1>How to use</h1>
+
+<h2>Packages</h2>
+
+<h3>WxIntegrationTestClient</h3>
+
+Normally as user you do not have to take a look on this package.
+
+<h3>WxIntegrationTestController</h3>
+
+<h4>pub/components: Components for building integration tests</h4>
+
+<h5>Generic components</h5>
+
+<ul>
+  <li>wx.integrationTest.controller.pub.components:prepareGenericTest: Use that service at the beginning of each test which is <b>not</b> started by a JMS message</li>
+  <li>wx.integrationTest.controller.pub.components:prepareJMSMessageTest: Use that service at the beginning of each test which is started by a JMS message</li>
+  <li>wx.integrationTest.controller.pub.components:endTest: Use that service at the end of each test. It will care for the right structure on the pipeline</li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+</ul>
+
+<h5>Specific components</h5>
+
+All these components are designed for doing actions by the client servers/clusters and on the client servers/clusters executed by the WxIntegrationTestClient package. For that they have an input "requestTarget" which can be used to point at the desired IS cluster. If you have only one IS cluster you can ignore that field.
+
+<ul>
+  <li>wx.integrationTest.controller.pub.components:callHttpRemote: Like running pub.client:http direclty from the client</li>
+  <li>wx.integrationTest.controller.pub.components:callWsdConsumerRemote: Consider that a proper WSD consumer must be on the related client server/cluster</li>
+  <li>wx.integrationTest.controller.pub.components:invokeServiceRemote: Use for invoking any service on the client. Consider that the handling of the pipeline could by tricky</li>
+  <li>wx.integrationTest.controller.pub.components:registerInterceptorRemote: Register an interception using WxInterceptor. Consider that this should be done before sending the test data for which WxInterceptor shall waiting for.</li>
+  <li>wx.integrationTest.controller.pub.components:pollForInterception: Has to be used together with registerInterceptorRemote. The test will wait till there is an response about an interception on the Client received by the Controller in behind.</li>
+  <li>wx.integrationTest.controller.pub.components:sendJMSMessageRemote: Like running pub.jms:send directly from the client</li>
+</ul>

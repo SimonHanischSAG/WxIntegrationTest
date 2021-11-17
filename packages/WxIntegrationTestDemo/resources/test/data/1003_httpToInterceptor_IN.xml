@@ -4,18 +4,18 @@
   <record javaclass="com.wm.data.ISMemDataImpl">
     <value name="testId">1003</value>
     <record name="requestTargetHttp" javaclass="com.wm.data.ISMemDataImpl">
-      <value name="clusterName">cluster1</value>
+      <value name="clusterName">MainCluster</value>
     </record>
     <record name="callHttpRequest" javaclass="com.wm.data.ISMemDataImpl">
-      <value name="url">http://localhost:5555/rest/wx.integrationTest.demoTestedA.pub.ws.resourceX</value>
+      <value name="url">http://localhost:5555/rest/wx.demo.systemA.pub.ws.resourceX</value>
       <value name="method">get</value>
       <value name="loadAs">string</value>
     </record>
     <record name="registerInterceptorRequest" javaclass="com.wm.data.ISMemDataImpl">
-      <value name="serviceName">wx.integrationTest.demoTestedA.pub.ws.resourceX:_get</value>
+      <value name="serviceName">wx.demo.systemA.pub.ws.resourceX:_get</value>
     </record>
     <record name="requestTargetInterceptor" javaclass="com.wm.data.ISMemDataImpl">
-      <value name="clusterName">cluster1</value>
+      <value name="clusterName">MainCluster</value>
     </record>
   </record>
 </IDataXMLCoder>

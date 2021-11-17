@@ -4,14 +4,14 @@
   <record javaclass="com.wm.data.ISMemDataImpl">
     <value name="testId">1000</value>
     <record name="invokeServiceRequest" javaclass="com.wm.data.ISMemDataImpl">
-      <value name="ifcname">wx.integrationTest.demoTestedA.pub.service</value>
+      <value name="ifcname">wx.demo.systemA.pub.service</value>
       <value name="svcname">top1</value>
       <record name="pipeline" javaclass="com.wm.data.ISMemDataImpl">
         <value name="input">1</value>
       </record>
     </record>
     <record name="requestTarget" javaclass="com.wm.data.ISMemDataImpl">
-      <value name="clusterName">cluster1</value>
+      <value name="clusterName">MainCluster</value>
     </record>
   </record>
 </IDataXMLCoder>

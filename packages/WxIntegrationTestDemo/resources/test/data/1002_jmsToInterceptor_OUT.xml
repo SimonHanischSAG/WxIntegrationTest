@@ -9,7 +9,7 @@
       <record name="header" javaclass="com.wm.data.ISMemDataImpl">
         <null name="JMSCorrelationID"/>
         <number name="JMSDeliveryMode" type="java.lang.Integer">2</number>
-        <value name="JMSDestination">DemoTestedAToDemoTestedBQueue</value>
+        <value name="JMSDestination">internal/SystemBTransferInboundQueue</value>
         <number name="JMSExpiration" type="java.lang.Long">0</number>
         <number name="JMSPriority" type="java.lang.Integer">4</number>
         <jboolean name="JMSRedelivered">false</jboolean>

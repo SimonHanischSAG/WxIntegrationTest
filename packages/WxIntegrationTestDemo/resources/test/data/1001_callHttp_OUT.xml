@@ -5,7 +5,7 @@
     <record name="body" javaclass="com.wm.util.Values">
 
     </record>
-    <value name="encodedURL">http://localhost:5555/rest/wx.integrationTest.demoTestedA.pub.ws.resourceX?test</value>
+    <value name="encodedURL">http://localhost:5555/rest/wx.demo.systemA.pub.ws.resourceX?test</value>
     <record name="header" javaclass="com.wm.util.Values">
       <record name="lines" javaclass="com.wm.util.Values">
         <value name="Content-Type">text/html; charset=UTF-8</value>

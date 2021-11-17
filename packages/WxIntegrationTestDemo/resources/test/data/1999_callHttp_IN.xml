@@ -4,7 +4,7 @@
   <record javaclass="com.wm.data.ISMemDataImpl">
     <value name="testId">1999</value>
     <record name="requestTarget" javaclass="com.wm.data.ISMemDataImpl">
-      <value name="clusterName">cluster1</value>
+      <value name="clusterName">MainCluster</value>
     </record>
     <record name="callHttpRequest" javaclass="com.wm.data.ISMemDataImpl">
       <value name="url">http://localhost:5555/invoke/wm.server:ping</value>

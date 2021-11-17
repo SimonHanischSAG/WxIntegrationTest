@@ -1,0 +1,12 @@
+wx.config.env.DEV=wxconfig-DEV.cnf
+wx.config.env.TEST=wxconfig-TEST.cnf
+wx.config.env.QA=wxconfig-QA.cnf
+wx.config.env.PROD=wxconfig-PROD.cnf
+wx.config.env.DEV=../../../config/packages/WxDemoSystemAConfig/wxconfig-DEV.cnf
+wx.config.env.TEST=../../../config/packages/WxDemoSystemAConfig/wxconfig-TEST.cnf
+wx.config.env.QA=../../../config/packages/WxDemoSystemAConfig/wxconfig-QA.cnf
+wx.config.env.PROD=../../../config/packages/WxDemoSystemAConfig/wxconfig-PROD.cnf
+
+myKeyInGobalFile=global
+
+

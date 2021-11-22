@@ -7,14 +7,9 @@
 
 <INVOKE TIMEOUT="" SERVICE="wx.integrationTest.controller.pub.components:prepareGenericTest" VALIDATE-IN="$none" VALIDATE-OUT="$none">
   <COMMENT></COMMENT>
-
-  <!-- nodes -->
-
-<MAP MODE="INPUT">
-</MAP>
 </INVOKE>
 
-<INVOKE TIMEOUT="" SERVICE="wx.integrationTest.controller.pub.components:callHttpRemote" VALIDATE-IN="$none" VALIDATE-OUT="$none">
+<INVOKE TIMEOUT="" SERVICE="wx.integrationTest.controller.pub.components:pingClients" VALIDATE-IN="$none" VALIDATE-OUT="$none">
   <COMMENT></COMMENT>
 
   <!-- nodes -->

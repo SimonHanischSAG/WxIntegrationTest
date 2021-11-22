@@ -40,6 +40,16 @@
             </expected>
         </service>
     </webMethodsTestCase>
+    <webMethodsTestCase description="Auto generated test for service wx.integrationTest.controller.pub.standardtests:testPingClients" name="1004: Test for wx.integrationTest.controller.pub.standardtests:testPingClients">
+        <service folder="wx.integrationTest.controller.pub.standardtests" name="testPingClients">
+            <input>
+                <file/>
+            </input>
+            <expected>
+                <file/>
+            </expected>
+        </service>
+    </webMethodsTestCase>
     <webMethodsTestCase description="Auto generated test for service wx.integrationTest.controller.pub.standardtests:testCallHttp" name="1999: Test for wx.integrationTest.controller.pub.standardtests:testCallHttp">
         <service folder="wx.integrationTest.controller.pub.standardtests" name="testCallHttp">
             <input>

@@ -69,14 +69,25 @@ public final class util
 		cleanUpArrivedResponses();
 		
 		// log("SITC: before put :" + id + "," + arrivedResponses);
-		Response response = new Response();
-		response.date = new Date();
-		response.genericResponse = genericResponse;
-		arrivedResponses.put(id, response);
+		
+		Response alreadyArrivedResponse = arrivedResponses.get(id);
+		if (alreadyArrivedResponse == null) {
+			Response response = new Response();
+			response.date = new Date();
+			response.genericResponse = genericResponse;
+		
+			arrivedResponses.put(id, response);
+		} else {
+			alreadyArrivedResponse.date = new Date();
+			alreadyArrivedResponse.genericResponse = genericResponse;
+			alreadyArrivedResponse.responseCount++;
+			arrivedResponses.put(id, alreadyArrivedResponse);
+		}
 		
 		// log("SITC: length of arrivedResponses after notifying:" +
 		// arrivedResponses.size());
 		
+			
 		// --- <<IS-END>> ---
 
                 
@@ -90,6 +101,7 @@ public final class util
 		// --- <<IS-START(pollForMessage)>> ---
 		// @sigtype java 3.5
 		// [i] field:0:required id
+		// [i] field:0:optional waitForResponseFromXClients
 		// [o] record:0:optional pipeline
 		// log("SITC: length of arrivedResponses before polling:" +
 		// arrivedResponses.size());
@@ -106,27 +118,36 @@ public final class util
 			myPollingCountMax = Integer.valueOf(timeoutInSeconds);
 		}
 		
+		String waitForResponseFromXClients = pipeMap.getAsString("waitForResponseFromXClients");
+		int waitForResponseFromXClientsInt = 1;
+		if (waitForResponseFromXClients != null && !waitForResponseFromXClients.equals("")) {
+			waitForResponseFromXClientsInt = Integer.valueOf(waitForResponseFromXClients);
+		}
+		
+		
+		
 		Date foundAndRemovedValue = null;
+		int foundResponseCount = 0;
 		int pollingCount = 0;
 		do {
 			try {
 				Thread.sleep(pollingInterval);
-			} catch (InterruptedException e) {
-			}
-			// log("SITC: length of arrivedResponses during polling:" +
-			// arrivedResponses.size());
-			// log("SITC: check for " + id + " in arrivedResponses");
+			} catch (InterruptedException e) {}
+			//log("SITC: length of arrivedResponses during polling:" + arrivedResponses.size());
+			//log("SITC: check for " + id + " in arrivedResponses");
 			Response response = arrivedResponses.remove(id);
-			// log("SITC: response " + response);
+			//log("SITC: response " + response);
 			if (response != null) {
-				// log("SITC: response not null");
+				//log("SITC: response not null");
+				foundResponseCount = response.responseCount;
+				//log("foundResponseCount: " + foundResponseCount);
 				foundAndRemovedValue = response.date;
 				if (response.genericResponse != null) {
 					pipeMap.put("genericResponse", response.genericResponse);
 				}
 			}
 			pollingCount++;
-		} while (foundAndRemovedValue == null && pollingCount < myPollingCountMax);
+		} while (foundResponseCount < waitForResponseFromXClientsInt && pollingCount < myPollingCountMax);
 		
 		if (foundAndRemovedValue == null) {
 			throw new ServiceException("pollForMessage: Timeout during polling for response for id: " + id);
@@ -134,6 +155,7 @@ public final class util
 		// log("SITC: length of arrivedResponses after polling:" +
 		// arrivedResponses.size());
 		
+			
 			
 		// --- <<IS-END>> ---
 
@@ -188,7 +210,7 @@ public final class util
 	
 		private Date date;
 		private IData genericResponse;
-	
+		private int responseCount = 1;
 	}
 	
 	public static void log(String message) {

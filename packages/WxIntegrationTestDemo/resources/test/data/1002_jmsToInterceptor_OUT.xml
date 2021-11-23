@@ -14,7 +14,7 @@
         <number name="JMSPriority" type="java.lang.Integer">4</number>
         <jboolean name="JMSRedelivered">false</jboolean>
         <value name="JMSReplyTo">null</value>
-        <value name="JMSType">testType</value>
+        <value name="JMSType">resourceX</value>
       </record>
       <record name="body" javaclass="com.wm.data.ISMemDataImpl">
         <value name="string">test</value>

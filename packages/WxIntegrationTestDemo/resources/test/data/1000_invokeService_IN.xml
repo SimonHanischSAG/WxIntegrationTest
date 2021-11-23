@@ -10,8 +10,5 @@
         <value name="input">1</value>
       </record>
     </record>
-    <record name="requestTarget" javaclass="com.wm.data.ISMemDataImpl">
-      <value name="clusterName">MainCluster</value>
-    </record>
   </record>
 </IDataXMLCoder>

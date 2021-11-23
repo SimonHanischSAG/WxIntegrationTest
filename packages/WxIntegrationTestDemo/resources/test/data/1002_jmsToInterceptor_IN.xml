@@ -16,15 +16,9 @@
         <value name="string">test</value>
       </record>
     </record>
-    <record name="requestTargetJMS" javaclass="com.wm.data.ISMemDataImpl">
-      <value name="clusterName">MainCluster</value>
-    </record>
     <record name="registerInterceptorRequest" javaclass="com.wm.data.ISMemDataImpl">
       <value name="serviceName">wx.demo.systemB.impl.resourceX:handleResourceX</value>
       <value name="timeoutForInterceptionInSeconds">60</value>
-    </record>
-    <record name="requestTargetInterceptor" javaclass="com.wm.data.ISMemDataImpl">
-      <value name="clusterName">MainCluster</value>
     </record>
   </record>
 </IDataXMLCoder>

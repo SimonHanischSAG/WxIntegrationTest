@@ -3,9 +3,6 @@
 <IDataXMLCoder version="1.0">
   <record javaclass="com.wm.data.ISMemDataImpl">
     <value name="testId">1001</value>
-    <record name="requestTarget" javaclass="com.wm.data.ISMemDataImpl">
-      <value name="clusterName">MainCluster</value>
-    </record>
     <record name="callHttpRequest" javaclass="com.wm.data.ISMemDataImpl">
       <value name="url">http://localhost:5555/rest/wx.demo.systemA.pub.ws.resourceX</value>
       <value name="method">get</value>

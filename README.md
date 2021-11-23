@@ -69,7 +69,7 @@ If you are using WxConfigLight you have to run http://localhost:5555/invoke/wx.c
 <h2>Execution</h2>
 <h3>Run demo tests</h3>
 
-Open WxIntegrationTestDemo\resources\test\integrationTests-DEV.xml in Designer and run the "Run Suite". In order to run every test successfully you have to configure the ACL Anonymous at wx.integrationTest.demoTestedA.pub.ws.resourceX:_get.
+Open WxIntegrationTestDemo\resources\test\integrationTests-DEV.xml in Designer and run the "Run Suite". In order to run every test successfully you have to configure the ACL Anonymous at wx.demo.systemA.pub.ws.resourceX:_get and wx.demo.systemA.pub.ws.resourceX:_post
 
 <h1>How to use</h1>
 
@@ -106,4 +106,10 @@ All these components are designed for doing actions by the client servers/cluste
   <li>wx.integrationTest.controller.pub.components:registerInterceptorRemote: Register an interception using WxInterceptor. Consider that this should be done before sending the test data for which WxInterceptor shall waiting for.</li>
   <li>wx.integrationTest.controller.pub.components:pollForInterception: Has to be used together with registerInterceptorRemote. The test will wait till there is an response about an interception on the Client received by the Controller in behind.</li>
   <li>wx.integrationTest.controller.pub.components:sendJMSMessageRemote: Like running pub.jms:send directly from the client</li>
+  
+  <h5>Helper services</h5>
+  
+wx.integrationTest.client.impl.util:checkYourFilterExpression
+  wx.integrationTest.client.impl.util:checkFilterExpression
+wx.integrationTest.client.impl.util:checkFilterExpressionDemo
 </ul>

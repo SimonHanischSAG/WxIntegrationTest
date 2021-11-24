@@ -67,9 +67,17 @@ Reload the packages
 If you are using WxConfigLight you have to run http://localhost:5555/invoke/wx.config.admin:replaceVariablesWithGlobalFile?wxConfigPkgName=WxIntegrationTestClient in order to load the keys of the package into the necessary Global Variables. WxConfig will do that automatically.
 
 <h2>Execution</h2>
-<h3>Run demo tests</h3>
+<h3>Run demo tests via WmTestSuite</h3>
 
 Open WxIntegrationTestDemo\resources\test\integrationTests-DEV.xml in Designer and run the "Run Suite". In order to run every test successfully you have to configure the ACL Anonymous at wx.demo.systemA.pub.ws.resourceX:_get and wx.demo.systemA.pub.ws.resourceX:_post
+
+<h3>Run demo tests via Designer</h3>
+
+You can execute a test manually by running the related Flow service with a special input. That is also the preferred way how to develop a new integration test.
+
+<h3>Run demo tests via REST</h3>
+
+There will be a REST endpoint in WxIntegrationTestController in future in order to run all WmTestSuite tests of a package with a simple HTTP-GET.
 
 <h1>How to use</h1>
 

@@ -3840,7 +3840,7 @@
 
   <!-- nodes -->
 
-<INVOKE NAME="$null" TIMEOUT="" SERVICE="wx.config.impl.util:sleep" VALIDATE-IN="$none" VALIDATE-OUT="$none">
+<INVOKE NAME="$null" TIMEOUT="" SERVICE="wx.config.impl.util.system:sleep" VALIDATE-IN="$none" VALIDATE-OUT="$none">
   <COMMENT></COMMENT>
 
   <!-- nodes -->

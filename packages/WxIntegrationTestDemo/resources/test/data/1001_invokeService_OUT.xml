@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<IDataXMLCoder version="1.0">
+  <record javaclass="com.wm.util.Values">
+    <record name="resourceX" javaclass="com.wm.data.ISMemDataImpl">
+      <value name="field">xyz</value>
+      <value name="date">2021-12-12T12:12:12+0000</value>
+      <value name="number">42</value>
+    </record>
+  </record>
+</IDataXMLCoder>

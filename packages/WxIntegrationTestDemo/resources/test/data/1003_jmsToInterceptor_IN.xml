@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<IDataXMLCoder version="1.0">
+  <record javaclass="com.wm.data.ISMemDataImpl">
+    <value name="testId">1002</value>
+    <record name="sendJMSMessageRequest" javaclass="com.wm.data.ISMemDataImpl">
+      <value name="connectionAliasName">DEFAULT_IS_JMS_CONNECTION</value>
+      <value name="destinationName">internal/SystemBTransferInboundQueue</value>
+      <value name="destinationType">QUEUE</value>
+    </record>
+    <record name="JMSMessage" javaclass="com.wm.data.ISMemDataImpl">
+      <record name="header" javaclass="com.wm.data.ISMemDataImpl">
+        <value name="JMSType">resourceX</value>
+      </record>
+      <record name="body" javaclass="com.wm.data.ISMemDataImpl">
+        <record name="data" javaclass="com.wm.data.ISMemDataImpl">
+          <record name="payload" javaclass="com.wm.data.ISMemDataImpl">
+            <value name="field">abc</value>
+            <value name="date">2012-12-12T12:12:12+0012</value>
+            <value name="number">42</value>
+          </record>
+        </record>
+      </record>
+    </record>
+    <record name="registerInterceptorRequest" javaclass="com.wm.data.ISMemDataImpl">
+      <value name="serviceName">wx.demo.systemB.impl:sendToSystemB</value>
+      <value name="timeoutForInterceptionInSeconds">60</value>
+    </record>
+  </record>
+</IDataXMLCoder>

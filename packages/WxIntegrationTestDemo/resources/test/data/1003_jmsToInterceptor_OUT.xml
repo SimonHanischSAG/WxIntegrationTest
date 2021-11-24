@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<IDataXMLCoder version="1.0">
+  <record javaclass="com.wm.util.Values">
+    <value name="@WxResilience.logging.function@">WxDemoSystemB</value>
+    <record name="payload" javaclass="com.wm.data.ISMemDataImpl">
+      <value name="fieldInCapital">ABC</value>
+      <value name="dateWithoutTimezone">2012-12-12T13:00:12</value>
+      <value name="numberWithLeadingZeros">0042</value>
+    </record>
+  </record>
+</IDataXMLCoder>

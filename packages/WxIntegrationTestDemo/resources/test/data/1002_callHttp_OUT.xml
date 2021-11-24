@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<IDataXMLCoder version="1.0">
+  <record javaclass="com.wm.util.Values">
+    <record name="body" javaclass="com.wm.util.Values">
+      <value name="string">{"field":"xyz","date":"2021-12-12T12:12:12+0000","number":"42"}</value>
+    </record>
+    <value name="encodedURL">http://localhost:5555/rest/wx.demo.systemA.pub.ws.resourceX</value>
+    <record name="header" javaclass="com.wm.util.Values">
+      <record name="lines" javaclass="com.wm.util.Values">
+        <value name="Content-Type">application/json; charset=UTF-8</value>
+        <value name="Content-Length">63</value>
+      </record>
+      <value name="status">200</value>
+      <value name="statusMessage">OK</value>
+    </record>
+  </record>
+</IDataXMLCoder>

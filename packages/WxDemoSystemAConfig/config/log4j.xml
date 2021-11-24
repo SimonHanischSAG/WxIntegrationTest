@@ -11,15 +11,15 @@
       <param name="MaxBackupIndex" value="10" />
       <param name="DatePattern" value="'.'yyyyMMdd" />
       <param name="Append" value="true" />
-      <param name="File" value="./logs/WxDemoSystemB.log" />
+      <param name="File" value="./logs/WxDemoSystemA.log" />
       <param name="threshold" value="info"/>
       <layout class="org.apache.log4j.PatternLayout">
         <param name="ConversionPattern" value="%d %-5p - %m%n" />
       </layout>
   </appender>
 
-  <category name="WxDemoSystemB">
-    <appender-ref ref="WxDemoSystemB"/>
+  <category name="WxDemoSystemA">
+    <appender-ref ref="WxDemoSystemA"/>
   </category>
 
 </log4j:configuration>

@@ -286,8 +286,7 @@ public final class util
 				String isInterceptorRunningforIntegrationTest = IDataUtil.getString(cursor,
 						"isInterceptorRunningForIntegrationTest");// runningOutputMap.getAsString("isInterceptorRunningforIntegrationTest");
 				// log("cursor: " + );
-				// log("SITCL: isInterceptorRunningforIntegrationTest " +
-				// isInterceptorRunningforIntegrationTest);
+				log("SITCL: isInterceptorRunningforIntegrationTest " + isInterceptorRunningforIntegrationTest);
 				if ("false".equals(isInterceptorRunningforIntegrationTest)) {
 					IData svcResult = Service.doInvoke("wx.interceptor.pub.config", "unregisterInvokeChainProcessor",
 							(IData) null);

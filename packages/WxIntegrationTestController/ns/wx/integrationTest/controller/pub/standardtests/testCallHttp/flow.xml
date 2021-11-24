@@ -21,6 +21,9 @@
 
 <MAP MODE="INPUT">
 </MAP>
+
+<MAP MODE="OUTPUT">
+</MAP>
 </INVOKE>
 
 <INVOKE TIMEOUT="" SERVICE="wx.integrationTest.controller.pub.components:endTest" VALIDATE-IN="$none" VALIDATE-OUT="$none">

@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <FLOW VERSION="3.0" CLEANUP="true">
+  <COMMENT></COMMENT>
 
   <!-- nodes -->
 
@@ -1473,6 +1474,10 @@
 <MAPDELETE FIELD="/requestTargetHttp;4;0;wx.integrationTest.controller.doc:requestTarget">
 </MAPDELETE>
 </MAP>
+</INVOKE>
+
+<INVOKE TIMEOUT="" SERVICE="wx.integrationTest.controller.pub.components:pollForInterception" VALIDATE-IN="$none" VALIDATE-OUT="$none">
+  <COMMENT></COMMENT>
 </INVOKE>
 
 <INVOKE TIMEOUT="" SERVICE="wx.integrationTest.controller.pub.components:endTest" VALIDATE-IN="$none" VALIDATE-OUT="$none">

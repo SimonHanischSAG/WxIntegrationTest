@@ -1,72 +1,62 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <webMethodsTestSuite description="" name="Integration Tests">
-    <webMethodsTestCase description="Auto generated test for service wx.integrationTest.controller.pub.standardtests:testInvokeService" name="1000: Test for wx.integrationTest.controller.pub.standardtests:testInvokeService">
-        <service folder="wx.integrationTest.controller.pub.standardtests" name="testInvokeService">
-            <input>
-                <file filename="resources/test/data/1000_invokeService_IN.xml"/>
-            </input>
-            <expected>
-                <file filename="resources/test/data/1000_invokeService_OUT.xml"/>
-            </expected>
-        </service>
-    </webMethodsTestCase>
-    <webMethodsTestCase description="Auto generated test for service wx.integrationTest.controller.pub.standardtests:testCallHttp" name="1001: Test for wx.integrationTest.controller.pub.standardtests:testCallHttp">
-        <service folder="wx.integrationTest.controller.pub.standardtests" name="testCallHttp">
-            <input>
-                <file filename="resources/test/data/1001_callHttp_IN.xml"/>
-            </input>
-            <expected>
-                <file filename="resources/test/data/1001_callHttp_OUT.xml"/>
-            </expected>
-        </service>
-    </webMethodsTestCase>
-    <webMethodsTestCase description="Auto generated test for service wx.integrationTest.controller.pub.standardtests:testJmsToInterceptor" name="1002: Test for wx.integrationTest.controller.pub.standardtests:testJmsToInterceptor">
-        <service folder="wx.integrationTest.controller.pub.standardtests" name="testJmsToInterceptor">
-            <input>
-                <file filename="resources/test/data/1002_jmsToInterceptor_IN.xml"/>
-            </input>
-            <expected>
-                <file filename="resources/test/data/1002_jmsToInterceptor_OUT.xml"/>
-            </expected>
-        </service>
-    </webMethodsTestCase>
-    <webMethodsTestCase description="Auto generated test for service wx.integrationTest.demo.pub:myTestHttpToInterceptor" name="1003: Test for wx.integrationTest.demo.pub:myTestHttpToInterceptor">
-        <service folder="wx.integrationTest.demo.pub" name="myTestHttpToInterceptor">
-            <input>
-                <file filename="resources/test/data/1003_httpToInterceptor_IN.xml"/>
-            </input>
-            <expected>
-                <file filename="resources/test/data/1003_httpToInterceptor_OUT.xml"/>
-            </expected>
-        </service>
-    </webMethodsTestCase>
-    <webMethodsTestCase description="Auto generated test for service wx.integrationTest.controller.pub.standardtests:testPingClients" name="1004: Test for wx.integrationTest.controller.pub.standardtests:testPingClients">
+    <webMethodsTestCase description="Auto generated test for service wx.integrationTest.controller.pub.standardtests:testPingClients" name="1000: Test for wx.integrationTest.controller.pub.standardtests:testPingClients">
         <service folder="wx.integrationTest.controller.pub.standardtests" name="testPingClients">
             <input>
-                <file/>
+                <file filename="resources/test/data/1000_testPing_IN.xml"/>
             </input>
             <expected>
                 <file/>
             </expected>
         </service>
     </webMethodsTestCase>
-    <webMethodsTestCase description="Auto generated test for service wx.integrationTest.controller.pub.standardtests:testCallHttp" name="1999: Test for wx.integrationTest.controller.pub.standardtests:testCallHttp">
-        <service folder="wx.integrationTest.controller.pub.standardtests" name="testCallHttp">
+    <webMethodsTestCase description="Auto generated test for service wx.integrationTest.controller.pub.standardtests:testInvokeService" name="1001: Test for wx.integrationTest.controller.pub.standardtests:testInvokeService">
+        <service folder="wx.integrationTest.controller.pub.standardtests" name="testInvokeService">
             <input>
-                <file filename="resources/test/data/1999_callHttp_IN.xml"/>
+                <file filename="resources/test/data/1001_invokeService_IN.xml"/>
             </input>
             <expected>
-                <file filename="resources/test/data/1999_callHttp_OUT.xml"/>
+                <file filename="resources/test/data/1001_invokeService_OUT.xml"/>
             </expected>
         </service>
     </webMethodsTestCase>
-    <webMethodsTestCase description="Auto generated test for service wx.integrationTest.controller.pub.standardtests:testCallHttp" name="2000: Test for wx.integrationTest.controller.pub.standardtests:testCallHttp">
+    <webMethodsTestCase description="Auto generated test for service wx.integrationTest.controller.pub.standardtests:testCallHttp" name="1002: Test for wx.integrationTest.controller.pub.standardtests:testCallHttp">
         <service folder="wx.integrationTest.controller.pub.standardtests" name="testCallHttp">
             <input>
-                <file filename="resources/test/data/2000_callHttp_IN.xml"/>
+                <file filename="resources/test/data/1002_callHttp_IN.xml"/>
             </input>
             <expected>
-                <file filename="resources/test/data/2000_callHttp_OUT.xml"/>
+                <file filename="resources/test/data/1002_callHttp_OUT.xml"/>
+            </expected>
+        </service>
+    </webMethodsTestCase>
+    <webMethodsTestCase description="Auto generated test for service wx.integrationTest.controller.pub.standardtests:testJmsToInterceptor" name="1003: Test for wx.integrationTest.controller.pub.standardtests:testJmsToInterceptor">
+        <service folder="wx.integrationTest.controller.pub.standardtests" name="testJmsToInterceptor">
+            <input>
+                <file filename="resources/test/data/1003_jmsToInterceptor_IN.xml"/>
+            </input>
+            <expected>
+                <file filename="resources/test/data/1003_jmsToInterceptor_OUT.xml"/>
+            </expected>
+        </service>
+    </webMethodsTestCase>
+    <webMethodsTestCase description="Auto generated test for service wx.integrationTest.demo.pub:myTestHttpToInterceptor" name="1004: Test for wx.integrationTest.demo.pub:myTestHttpToInterceptor">
+        <service folder="wx.integrationTest.demo.pub" name="myTestHttpToInterceptor">
+            <input>
+                <file filename="resources/test/data/1004_httpToInterceptor_IN.xml"/>
+            </input>
+            <expected>
+                <file filename="resources/test/data/1004_httpToInterceptor_OUT.xml"/>
+            </expected>
+        </service>
+    </webMethodsTestCase>
+    <webMethodsTestCase description="Auto generated test for service wx.integrationTest.demo.pub:myTestHttpToInterceptorOverJms" name="1005: Test for wx.integrationTest.demo.pub:myTestHttpToInterceptorOverJms">
+        <service folder="wx.integrationTest.demo.pub" name="myTestHttpToInterceptorOverJms">
+            <input>
+                <file filename="resources/test/data/1005_httpToInterceptorOverJms_IN.xml"/>
+            </input>
+            <expected>
+                <file filename="resources/test/data/1005_httpToInterceptorOverJms_OUT.xml"/>
             </expected>
         </service>
     </webMethodsTestCase>

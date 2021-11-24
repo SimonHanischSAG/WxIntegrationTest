@@ -44,7 +44,7 @@
     <array name="routingRules" type="record" depth="1">
       <record javaclass="com.wm.util.Values">
         <value name="ruleName">Rule1</value>
-        <value name="serviceName">wx.demo.systemB.impl.resourceX:handleResourceX</value>
+        <value name="serviceName">wx.demo.systemB.impl:handleResourceX</value>
         <value name="filter">%header/JMSType% = "resourceX"</value>
       </record>
     </array>
@@ -56,8 +56,4 @@
       </record>
     </array>
   </record>
-  <number name="LOCK_STATUS" type="Integer">2</number>
-  <null name="LOCK_INFO"/>
-  <null name="DEPENDENT_LOCKS"/>
-  <value name="status">true</value>
 </Values>

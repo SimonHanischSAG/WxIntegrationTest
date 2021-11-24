@@ -97,8 +97,6 @@ Normally as user you do not have to take a look on this package. But there are s
   <li>wx.integrationTest.client.impl.util:checkYourFilterExpression, wx.integrationTest.client.impl.util:checkFilterExpression, wx.integrationTest.client.impl.util:checkFilterExpressionDemo: These helper services shall help you to use set the correct inputs for registerInterceptorRemote related to WxInterceptor and its filter expression</li>
   <li>wx.integrationTest.client.impl.util:isInterceptorRunningForIntegrationTest, 
 wx.integrationTest.client.impl.util:isWxInterceptorRegisteredInInvokeChain: If WxInterceptor is used it is added to the "invoke chain" of the IS and your Interceptor is stored in WxInterceptor. After the test both things a unregistered again. In order to check that manually you can use these helper services.</li>
-  <li></li>
-  <li></li>
 </ul>
 
   
@@ -137,4 +135,4 @@ There are some predefined standard tests which can be used for developing integr
   <li>wx.integrationTest.controller.pub.standardtests:testInvokeService: Call a service and check the output</li>
   <li>wx.integrationTest.controller.pub.standardtests:testJmsToInterceptor: Send a JMS message to a destination and wait that a specific service is invoked</li>
   <li>wx.integrationTest.controller.pub.standardtests:testPingClients: Ping some clients</li>
-  
+</ul>

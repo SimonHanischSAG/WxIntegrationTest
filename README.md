@@ -112,4 +112,7 @@ All these components are designed for doing actions by the client servers/cluste
 wx.integrationTest.client.impl.util:checkYourFilterExpression
   wx.integrationTest.client.impl.util:checkFilterExpression
 wx.integrationTest.client.impl.util:checkFilterExpressionDemo
+  
+  wx.integrationTest.client.impl.util:isInterceptorRunningForIntegrationTest
+wx.integrationTest.client.impl.util:isWxInterceptorRegisteredInInvokeChain
 </ul>

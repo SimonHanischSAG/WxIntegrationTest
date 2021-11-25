@@ -49,11 +49,20 @@ Create a JMS connection alias WxIntegrationTestController_IS_JMS_CONNECTION as a
 
 Check under releases for a proper release and deploy it. Otherwise you can check out the latest version from GIT and create a link like this:
 
-mklink /J F:\\SoftwareAG\\IntegrationServer\\instances\\default\\packages\\WxIntegrationTestClient F:\\GIT-Repos\\WxResilience\\packages\\WxIntegrationTestClient
-mklink /J F:\\SoftwareAG\\IntegrationServer\\instances\\default\\packages\\WxIntegrationTestController F:\\GIT-Repos\\WxResilience\\packages\\WxIntegrationTestController
-mklink /J F:\\SoftwareAG\\IntegrationServer\\instances\\default\\packages\\WxIntegrationTestDoc F:\\GIT-Repos\\WxResilience\\packages\\WxIntegrationTestDoc
+```
+mklink /J F:\\SoftwareAG\\IntegrationServer\\instances\\default\\packages\\WxIntegrationTestDoc F:\\GIT-Repos\\WxIntegrationTest\\packages\\WxIntegrationTestDoc
+mklink /J F:\\SoftwareAG\\IntegrationServer\\instances\\default\\packages\\WxIntegrationTestClient F:\\GIT-Repos\\WxIntegrationTest\\packages\\WxIntegrationTestClient
+mklink /J F:\\SoftwareAG\\IntegrationServer\\instances\\default\\packages\\WxIntegrationTestController F:\\GIT-Repos\\WxIntegrationTest\\packages\\WxIntegrationTestController
 
-...
+mklink /J F:\\SoftwareAG\\IntegrationServer\\instances\\default\\packages\\WxDemoCanonicals F:\\GIT-Repos\\WxIntegrationTest\\packages\\WxDemoCanonicals
+mklink /J F:\\SoftwareAG\\IntegrationServer\\instances\\default\\packages\\WxDemoSystemA F:\\GIT-Repos\\WxIntegrationTest\\packages\\WxDemoSystemA
+mklink /J F:\\SoftwareAG\\IntegrationServer\\instances\\default\\packages\\WxDemoSystemAConfig F:\\GIT-Repos\\WxIntegrationTest\\packages\\WxDemoSystemAConfig
+mklink /J F:\\SoftwareAG\\IntegrationServer\\instances\\default\\packages\\WxDemoSystemB F:\\GIT-Repos\\WxIntegrationTest\\packages\\WxDemoSystemB
+mklink /J F:\\SoftwareAG\\IntegrationServer\\instances\\default\\packages\\WxDemoSystemBConfig F:\\GIT-Repos\\WxIntegrationTest\\packages\\WxDemoSystemBConfig
+
+```
+
+
 
 <h4>Build & Reload</h4>
 

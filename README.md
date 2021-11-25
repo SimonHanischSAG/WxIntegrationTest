@@ -17,6 +17,8 @@ MANY THANKS TO LIDL AND SCHWARZ IT, who kindly allowed to provide the template f
 
 In behind all the communication between Controller and Client is handled by JMS messages. The Controller itself is not directly starting a tested service on the client, it will always send a command to WxIntegrationTestClient for doing that. That loose coupling gives you more flexibility e.g. if you switch the WxIntegrationTestController_IS_JMS_CONNECTION (compare with below) on your local development IS to the UM of another stage. Of course the "testing IS node" and the "tested IS cluster" can be physically one and the same server.
 
+It is no problem if there are several servers with the package WxIntegrationTestController running in the same environment. Every controller will receive the responses from the clients but only the real requester will react on these messages.
+
 <h1>How to setup</h1>
 
 <h2>Installation</h2>

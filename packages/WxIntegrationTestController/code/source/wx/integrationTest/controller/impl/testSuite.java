@@ -81,8 +81,9 @@ public final class testSuite
 			final Path instancesDir = instanceDir.getParent();
 			final Path isDir = instancesDir.getParent();
 			final Path wmHomeDir = isDir.getParent();
-			new TestSuiteRunner(wmHomeDir).run(packageDir, (s) -> true, testDir,
-												isUrl, isUser, isPassword, coverage);
+			final Path reportFile = new TestSuiteRunner(wmHomeDir).run(packageDir, (s) -> true, testDir,
+												                       isUrl, isUser, isPassword, coverage);
+			map.put("reportFile", reportFile.toString());
 		} catch (IOException e) {
 			throw new ServiceException(e);
 		}

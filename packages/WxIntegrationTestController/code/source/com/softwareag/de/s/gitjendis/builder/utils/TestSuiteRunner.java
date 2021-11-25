@@ -78,14 +78,14 @@ public class TestSuiteRunner {
 		wmHomeDir = pWmHomeDir;
 	}
 
-	public void run(Path pProjectDir, Predicate<String> pScopePackages, Path pTestDir, URL pIsUrl, String pIsUser, String pIsPassword, boolean pCoverage) {
+	public Path run(Path pProjectDir, Predicate<String> pScopePackages, Path pTestDir, URL pIsUrl, String pIsUser, String pIsPassword, boolean pCoverage) {
 		final List<IsPkg> packages = findIsPackages(pProjectDir);
 		final List<String> coverageScopePackages = packages.stream().map((p) -> p.name).filter(pScopePackages).collect(Collectors.toList());
 		final List<TestSuiteFile> testSuiteFiles = new ArrayList<>();
 		for (IsPkg isPkg : packages) {
 			findTestSuiteFiles(isPkg, testSuiteFiles::add);
 		}
-		run(testSuiteFiles, coverageScopePackages, pProjectDir, pTestDir, pIsUrl, pIsUser, pIsPassword, pCoverage);
+		return run(testSuiteFiles, coverageScopePackages, pProjectDir, pTestDir, pIsUrl, pIsUser, pIsPassword, pCoverage);
 	}
 
 	protected List<IsPkg> findIsPackages(Path pProjectDir) {
@@ -131,10 +131,13 @@ public class TestSuiteRunner {
 		}
 	}
 
-	public void run(@Nonnull List<TestSuiteFile> pTestSuiteFiles, @Nonnull List<String> pCoverageScopePackages, @Nonnull Path pProjectDir,
+	public Path run(@Nonnull List<TestSuiteFile> pTestSuiteFiles, @Nonnull List<String> pCoverageScopePackages, @Nonnull Path pProjectDir,
 			        @Nonnull Path pTestDir, @Nonnull URL pIsUrl, @Nullable String pIsUser, @Nullable String pIsPassword, boolean pCoverage) {
-		final String[] cmd = buildJavaCommand(pTestSuiteFiles, pCoverageScopePackages, pProjectDir, pTestDir, pIsUrl, pIsUser, pIsPassword, pCoverage);
-		execute(pProjectDir, pTestDir, cmd); 
+		Holder<Path> reportFileHolder = new Holder<>();
+		final String[] cmd = buildJavaCommand(pTestSuiteFiles, pCoverageScopePackages, pProjectDir, pTestDir, pIsUrl, pIsUser, pIsPassword, pCoverage,
+				                              (p) -> reportFileHolder.set(p));
+		execute(pProjectDir, pTestDir, cmd);
+		return reportFileHolder.get();
 	}
 
 	protected Consumer<InputStream> getStdOutConsumer() {
@@ -161,13 +164,13 @@ public class TestSuiteRunner {
 		} catch (IOException e) {
 			throw new UncheckedIOException(e);
 		}
-		System.out.println(pProjectDir + ": " + String.join(" ", cmd));
 		new Executor().run(pProjectDir, cmd, null, getStdOutConsumer(), getStdErrConsumer(), null);
 	}
 
 	protected @Nonnull String[] buildJavaCommand(@Nonnull List<TestSuiteFile> pTestSuiteFiles, @Nonnull List<String> pCoverageScopePackages,
-			                                     @Nonnull Path pProjectDir, @Nonnull Path pTestDir, @Nonnull URL pIsUrl,
-			                                     @Nullable String pIsUser, @Nullable String pIsPassword, boolean pCoverage) {
+			                                    @Nonnull Path pProjectDir, @Nonnull Path pTestDir, @Nonnull URL pIsUrl,
+			                                    @Nullable String pIsUser, @Nullable String pIsPassword, boolean pCoverage,
+			                                    @Nullable Consumer<Path> pReportFileConsumer) {
 		final List<String> cmd = new ArrayList<>();
 		cmd.add(findJavaExe().toAbsolutePath().toString());
 		cmd.add("-DwebMethods.integrationServer.name=" + pIsUrl.getHost());
@@ -189,6 +192,10 @@ public class TestSuiteRunner {
 		cmd.add("-DwebMethods.test.setup.external.classpath.layout=" + getClasspathLayout());
 		cmd.add("-cp");
 		cmd.add(String.join(File.pathSeparator, getClassPath(pProjectDir)));
+		final Path reportFile = reportsDir.resolve("TEST-com.softwareag.utf.runner.UTFSuiteCompositeRunner$init.xml");
+		if (pReportFileConsumer != null) {
+			pReportFileConsumer.accept(reportFile);
+		}
 		final String junitArgs = "org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner"
 				+ " com.softwareag.utf.runner.UTFSuiteCompositeRunner$init"
 				+ " skipNonTests=false"
@@ -202,12 +209,14 @@ public class TestSuiteRunner {
 				+ " threadid=0"
 				+ " logtestlistenerevents=false"
 				+ " formatter=org.apache.tools.ant.taskdefs.optional.junit.PlainJUnitResultFormatter,${reportsDir}/TEST-com.softwareag.utf.runner.UTFSuiteCompositeRunner$init.txt"
-				+ " formatter=com.softwareag.utf.runner.XMLJUnitResultFormatter,${reportsDir}/TEST-com.softwareag.utf.runner.UTFSuiteCompositeRunner$init.xml"
+				+ " formatter=com.softwareag.utf.runner.XMLJUnitResultFormatter,${reportFile}"
 				+ " crashfile=${testDir}/junitvmwatcher.properties"
 				+ " propsfile=${testDir}/junit.properties";
 		final Interpolator interpolator = new DefaultInterpolator((k) -> {
 			if ("reportsDir".equals(k)) {
 				return reportsDir.toAbsolutePath().toString();
+			} else if ("reportFile".equals(k)) {
+				return reportFile.toAbsolutePath().toString();
 			} else if ("testDir".equals(k)) {
 				return pTestDir.toAbsolutePath().toString();
 			} else {
@@ -222,7 +231,13 @@ public class TestSuiteRunner {
 	}
 
 	private Path getReportsDir(Path pTestDir) {
-		return pTestDir.resolve("reports");
+		final Path p = pTestDir.resolve("reports");
+		try {
+			Files.createDirectories(p);
+		} catch (IOException e) {
+			throw Exceptions.show(e);
+		}
+		return p;
 	}
 
 	protected Path findJavaExe() {
@@ -281,13 +296,13 @@ public class TestSuiteRunner {
 		for (StringTokenizer st = new StringTokenizer(jarFileList, ";");  st.hasMoreTokens();  ) {
 			final Path p = findJarFile(st.nextToken().trim());
 			final String p1;
+			final String p2 = p.toAbsolutePath().toString();
 			try {
 				p1 = pProjectDir.relativize(p).toString();
 			} catch (IllegalArgumentException e) {
-				throw new IllegalStateException("Failed to relativize " + p
-						+ " for project directory " + pProjectDir);
+				list.add(p2);
+				continue;
 			}
-			final String p2 = p.toAbsolutePath().toString();
 			if (p1.length() < p2.length()) {
 				list.add(p1);
 			} else {

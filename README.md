@@ -36,7 +36,7 @@ Use EnterpriseManager to access the UM referenced by DEFAULT_IS_JMS_CONNECTION:
 
 <ul>
   <li>Create ConnectionFactory local_um and check that DEFAULT_IS_JMS_CONNECTION is enabled</li>
-  <li>Create the topics ClientToControllerTopic, ControllerToOneClientOfClusterTopic and ControllerToAllClientsOfClusterTopic (and everntually the queues internal/SystemBTransferInboundQueue, external/SystemBInboundQueue in order to run the demo tests)</li>
+  <li>Create the topics ClientToControllerTopic, ControllerToOneClientOfClusterTopic and ControllerToAllClientsOfClusterTopic (and everntually the queues internal/SystemBTransferInboundQueue, external/SystemBInboundQueue if you want to run the demo tests)</li>
 </ul>
 
 <h4>Create JMS connection for WxIntegrationTestController</h4>

@@ -2,7 +2,7 @@
 
 <IDataXMLCoder version="1.0">
   <record javaclass="com.wm.data.ISMemDataImpl">
-    <value name="testId">1003</value>
+    <value name="testId">1004</value>
     <record name="callHttpRequest" javaclass="com.wm.data.ISMemDataImpl">
       <value name="url">http://localhost:5555/rest/wx.demo.systemA.pub.ws.resourceX?key=value</value>
       <value name="method">get</value>

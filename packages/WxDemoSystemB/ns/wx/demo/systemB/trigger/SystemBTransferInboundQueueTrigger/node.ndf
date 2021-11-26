@@ -3,7 +3,7 @@
 <Values version="2.0">
   <value name="node_type">webMethods/trigger</value>
   <value name="node_subtype">unknown</value>
-  <value name="node_nsName">wx.demo.systemB.pub.trigger:SystemBTransferInboundQueueTrigger</value>
+  <value name="node_nsName">wx.demo.systemB.trigger:SystemBTransferInboundQueueTrigger</value>
   <value name="node_pkg">WxDemoSystemB</value>
   <value name="node_comment"></value>
   <value name="is_public">false</value>
@@ -29,11 +29,11 @@
     <value name="inDoubtDetection">false</value>
     <value name="resolveWithHistory">false</value>
     <value name="resolutionHistoryTTL">7200000</value>
-    <value name="uniqueId">AUNqirst7JZ2KThKxm3qSNtLBSM=</value>
+    <value name="uniqueId">+JyRBjd/GVBfol/uJyWxSjdZ+S8=</value>
     <value name="executeUser">Administrator</value>
     <value name="aliasName">DEFAULT_IS_JMS_CONNECTION</value>
     <number name="jmsTriggerType" type="Integer">0</number>
-    <Boolean name="enabled">true</Boolean>
+    <Boolean name="enabled">false</Boolean>
     <value name="prefetchSize">10</value>
     <value name="connectionCount">1</value>
     <value name="inactiveWaitTime">1500</value>
@@ -44,7 +44,7 @@
     <array name="routingRules" type="record" depth="1">
       <record javaclass="com.wm.util.Values">
         <value name="ruleName">Rule1</value>
-        <value name="serviceName">wx.demo.systemB.impl:handleResourceX</value>
+        <value name="serviceName">wx.demo.systemB.pub:handleResourceX</value>
         <value name="filter">%header/JMSType% = "resourceX"</value>
       </record>
     </array>
@@ -55,5 +55,7 @@
         <number name="destinationType" type="Integer">0</number>
       </record>
     </array>
+    <number name="totalThrottledSessions" type="Integer">0</number>
+    <value name="aliasType">jndi</value>
   </record>
 </Values>

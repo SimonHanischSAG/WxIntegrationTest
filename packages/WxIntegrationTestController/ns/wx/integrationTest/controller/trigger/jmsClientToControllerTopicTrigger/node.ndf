@@ -33,7 +33,7 @@
     <value name="executeUser">Administrator</value>
     <value name="aliasName">WxIntegrationTestController_IS_JMS_CONNECTION</value>
     <number name="jmsTriggerType" type="Integer">0</number>
-    <Boolean name="enabled">true</Boolean>
+    <Boolean name="enabled">false</Boolean>
     <value name="prefetchSize">10</value>
     <value name="connectionCount">1</value>
     <value name="inactiveWaitTime">1500</value>
@@ -44,7 +44,7 @@
     <array name="routingRules" type="record" depth="1">
       <record javaclass="com.wm.util.Values">
         <value name="ruleName">Rule1</value>
-        <value name="serviceName">wx.integrationTest.controller.impl:handleClientMessage</value>
+        <value name="serviceName">wx.integrationTest.controller.pub:handleClientMessage</value>
         <value name="filter"></value>
       </record>
     </array>
@@ -57,5 +57,7 @@
         <Boolean name="durableSubscriberNoLocal">false</Boolean>
       </record>
     </array>
+    <number name="totalThrottledSessions" type="Integer">0</number>
+    <value name="aliasType">jndi</value>
   </record>
 </Values>

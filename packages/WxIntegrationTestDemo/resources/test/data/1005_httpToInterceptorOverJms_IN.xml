@@ -16,6 +16,9 @@
     </record>
     <record name="registerInterceptorRequest" javaclass="com.wm.data.ISMemDataImpl">
       <value name="serviceName">wx.demo.systemB.impl:sendToSystemB</value>
+      <array name="filterExpressionsList" type="value" depth="1">
+        <value>payload.fieldInCapital == 'XYZ'</value>
+      </array>
     </record>
   </record>
 </IDataXMLCoder>

@@ -3,6 +3,13 @@
 <IDataXMLCoder version="1.0">
   <record javaclass="com.wm.util.Values">
     <value name="@WxResilience.logging.function@">WxDemoSystemB</value>
+    <value name="fileNameSuffix">caller ende</value>
+    <record name="metaData" javaclass="com.wm.data.ISMemDataImpl">
+      <value name="uuid">7101ecb5-5e37-4441-995e-26a5e996bd43</value>
+      <value name="type">resourceX</value>
+      <value name="source">systemA</value>
+      <value name="destination">systemB</value>
+    </record>
     <record name="payload" javaclass="com.wm.data.ISMemDataImpl">
       <value name="fieldInCapital">ABC</value>
       <value name="dateWithoutTimezone">2012-12-12T13:00:12</value>

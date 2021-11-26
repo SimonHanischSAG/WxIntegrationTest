@@ -40,8 +40,8 @@
             </expected>
         </service>
     </webMethodsTestCase>
-    <webMethodsTestCase description="Auto generated test for service wx.integrationTest.demo.pub:myTestHttpToInterceptor" name="1004: Test for wx.integrationTest.demo.pub:myTestHttpToInterceptor">
-        <service folder="wx.integrationTest.demo.pub" name="myTestHttpToInterceptor">
+    <webMethodsTestCase description="Auto generated test for service wx.integrationTest.controller.pub.standardtests:testHttpToInterceptor" name="1004: Test for wx.integrationTest.controller.pub.standardtests:testHttpToInterceptor">
+        <service folder="wx.integrationTest.controller.pub.standardtests" name="testHttpToInterceptor">
             <input>
                 <file filename="resources/test/data/1004_httpToInterceptor_IN.xml"/>
             </input>
@@ -50,13 +50,23 @@
             </expected>
         </service>
     </webMethodsTestCase>
-    <webMethodsTestCase description="Auto generated test for service wx.integrationTest.demo.pub:myTestHttpToInterceptorOverJms" name="1005: Test for wx.integrationTest.demo.pub:myTestHttpToInterceptorOverJms">
-        <service folder="wx.integrationTest.demo.pub" name="myTestHttpToInterceptorOverJms">
+    <webMethodsTestCase description="Auto generated test for service wx.integrationTest.controller.pub.standardtests:testHttpToInterceptor" name="1005: Test for wx.integrationTest.controller.pub.standardtests:testHttpToInterceptor">
+        <service folder="wx.integrationTest.controller.pub.standardtests" name="testHttpToInterceptor">
             <input>
                 <file filename="resources/test/data/1005_httpToInterceptorOverJms_IN.xml"/>
             </input>
             <expected>
                 <file filename="resources/test/data/1005_httpToInterceptorOverJms_OUT.xml"/>
+            </expected>
+        </service>
+    </webMethodsTestCase>
+    <webMethodsTestCase description="Auto generated test for service wx.integrationTest.demo.pub:myTestInvokeServiceTwice" name="1006: Test for wx.integrationTest.demo.pub:myTestInvokeServiceTwice">
+        <service folder="wx.integrationTest.demo.pub" name="myTestInvokeServiceTwice">
+            <input>
+                <file filename="resources/test/data/1006_myTestInvokeServiceTwice_IN.xml"/>
+            </input>
+            <expected>
+                <file/>
             </expected>
         </service>
     </webMethodsTestCase>

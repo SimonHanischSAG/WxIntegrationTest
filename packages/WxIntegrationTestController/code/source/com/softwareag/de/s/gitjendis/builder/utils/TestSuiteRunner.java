@@ -78,14 +78,20 @@ public class TestSuiteRunner {
 		wmHomeDir = pWmHomeDir;
 	}
 
-	public Path run(Path pProjectDir, Predicate<String> pScopePackages, Path pTestDir, URL pIsUrl, String pIsUser, String pIsPassword, boolean pCoverage) {
+	public Path run(Path pProjectDir, Predicate<String> pScopePackages, Predicate<String> pTestSuiteFileFilter,
+			        Path pTestDir, URL pIsUrl, String pIsUser, String pIsPassword, boolean pCoverage) {
 		final List<IsPkg> packages = findIsPackages(pProjectDir);
 		final List<String> coverageScopePackages = packages.stream().map((p) -> p.name).filter(pScopePackages).collect(Collectors.toList());
 		final List<TestSuiteFile> testSuiteFiles = new ArrayList<>();
 		for (IsPkg isPkg : packages) {
-			findTestSuiteFiles(isPkg, testSuiteFiles::add);
+			findTestSuiteFiles(isPkg, pTestSuiteFileFilter, testSuiteFiles::add);
 		}
-		return run(testSuiteFiles, coverageScopePackages, pProjectDir, pTestDir, pIsUrl, pIsUser, pIsPassword, pCoverage);
+		if (testSuiteFiles.isEmpty()) {
+			return null;
+		} else {
+			return run(testSuiteFiles, coverageScopePackages, pProjectDir, pTestDir,
+					   pIsUrl, pIsUser, pIsPassword, pCoverage);
+		}
 	}
 
 	protected List<IsPkg> findIsPackages(Path pProjectDir) {
@@ -110,15 +116,22 @@ public class TestSuiteRunner {
 		return packages;
 	}
 
-	protected void findTestSuiteFiles(IsPkg pPackage, Consumer<TestSuiteFile> pConsumer) {
+	protected void findTestSuiteFiles(IsPkg pPackage,
+			Predicate<String> pTestSuiteFileFilter, Consumer<TestSuiteFile> pConsumer) {
 		final FileVisitor<Path> fv = new SimpleFileVisitor<Path>() {
 			@Override
 			public FileVisitResult visitFile(Path pFile, BasicFileAttributes pAttrs) throws IOException {
-				if (pAttrs.isRegularFile()  &&  pFile.getFileName().toString().endsWith(".xml")) {
+				final String fileName = pFile.getFileName().toString();
+				if (pAttrs.isRegularFile()  &&  fileName.endsWith(".xml")) {
 					if (isTestSuiteFile(pFile, System.err::println)) {
-						final Path packageDir = pPackage.getDir();
-						final String relativePath = packageDir.relativize(pFile).toString().replace('\\', '/');
-						pConsumer.accept(new TestSuiteFile(packageDir, relativePath));
+						if (pTestSuiteFileFilter.test(fileName)) {
+							log("Found test suite file " + pFile + ", accepted by filter.");
+							final Path packageDir = pPackage.getDir();
+							final String relativePath = packageDir.relativize(pFile).toString().replace('\\', '/');
+							pConsumer.accept(new TestSuiteFile(packageDir, relativePath));
+						} else {
+							log("Ignoring test suite file " + pFile + ", due to filter.");
+						}
 					}
 				}
 				return FileVisitResult.CONTINUE;
@@ -131,7 +144,8 @@ public class TestSuiteRunner {
 		}
 	}
 
-	public Path run(@Nonnull List<TestSuiteFile> pTestSuiteFiles, @Nonnull List<String> pCoverageScopePackages, @Nonnull Path pProjectDir,
+	public Path run(@Nonnull List<TestSuiteFile> pTestSuiteFiles,
+					@Nonnull List<String> pCoverageScopePackages, @Nonnull Path pProjectDir,
 			        @Nonnull Path pTestDir, @Nonnull URL pIsUrl, @Nullable String pIsUser, @Nullable String pIsPassword, boolean pCoverage) {
 		Holder<Path> reportFileHolder = new Holder<>();
 		final String[] cmd = buildJavaCommand(pTestSuiteFiles, pCoverageScopePackages, pProjectDir, pTestDir, pIsUrl, pIsUser, pIsPassword, pCoverage,
@@ -151,6 +165,9 @@ public class TestSuiteRunner {
 				throw new IllegalStateException("Invalid exit status: " + status);
 			}
 		};
+	}
+
+	protected void log(String pMsg) {
 	}
 	
 	protected void execute(@Nonnull Path pProjectDir, @Nonnull Path pTestDir, final @Nonnull String[] cmd) {

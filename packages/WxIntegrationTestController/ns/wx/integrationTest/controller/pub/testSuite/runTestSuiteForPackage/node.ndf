@@ -67,6 +67,25 @@
           <value name="form_qualified">false</value>
           <value name="is_global">false</value>
         </record>
+        <record javaclass="com.wm.util.Values">
+          <value name="node_type">record</value>
+          <value name="node_subtype">unknown</value>
+          <value name="node_comment"></value>
+          <record name="node_hints" javaclass="com.wm.util.Values">
+            <value name="field_usereditable">true</value>
+            <value name="field_largerEditor">false</value>
+            <value name="field_password">false</value>
+          </record>
+          <value name="is_public">false</value>
+          <value name="field_name">testSuiteFileFilter</value>
+          <value name="field_type">string</value>
+          <value name="field_dim">0</value>
+          <array name="field_options" type="value" depth="1">
+          </array>
+          <value name="nillable">true</value>
+          <value name="form_qualified">false</value>
+          <value name="is_global">false</value>
+        </record>
       </array>
       <value name="modifiable">true</value>
     </record>
@@ -104,7 +123,22 @@
       <value name="modifiable">true</value>
     </record>
   </record>
-  <value name="node_comment"></value>
+  <value name="node_comment">Runs the test suite for a single package, as given by the "package" parameter.
+Invokes runTestSuiteForPackage for every package in the list.
+
+Input Parameters:
+
+  - package Specifies the package, that is being tested.
+  - coverage Whether to enable code coverage, or not. Default is "false".
+  - testSuiteFileFilter - Specifies a filter for test suite files, that are being recognized. This is designed to enable, or disable, specific tests in particular
+                     environments. The filter may use the "*", or "?" wildcard characters. Examples could be "*-int-test.xml". By default, all test suite files are
+                     recognized.
+
+Output Parameters:
+
+  - reportFile Absolute path of the report file, that has been generated. This path could be downloaded and used by the
+                     Jenkins "junit" plugin.
+</value>
   <value name="stateless">yes</value>
   <value name="caching">no</value>
   <value name="prefetch">no</value>

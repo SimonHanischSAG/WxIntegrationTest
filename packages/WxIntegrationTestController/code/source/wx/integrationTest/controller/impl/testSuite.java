@@ -15,6 +15,9 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.function.Function;
+import java.util.function.Predicate;
+import java.util.regex.Pattern;
+import java.util.regex.PatternSyntaxException;
 import com.softwareag.de.s.gitjendis.builder.utils.TestSuiteRunner;
 import com.softwareag.util.IDataMap;
 // --- <<IS-END-IMPORTS>> ---
@@ -45,6 +48,8 @@ public final class testSuite
 		// [i] field:0:required isUser
 		// [i] field:0:required isPassword
 		// [i] field:0:required coverage {"false","true"}
+		// [i] field:0:required testSuiteFileFilter
+		// [o] field:0:required reportFile
 		final IDataMap map = new IDataMap(pipeline);
 		final Function<String,String> paramGetter = (p) -> {
 			final String v = map.getAsString(p);
@@ -58,6 +63,7 @@ public final class testSuite
 		};
 		final String packageName = paramGetter.apply("package");
 		final Path packageDir = Paths.get("./packages/" + packageName);
+		final Predicate<String> testSuiteFileFilter = asFilter(map.getAsString("testSuiteFileFilter"));
 		if (!Files.isDirectory(packageDir)) {
 			throw new IllegalArgumentException("Invalid value for parameter package: "
 					+ packageName + " (Package directory not found: " + packageDir + ")");
@@ -81,15 +87,81 @@ public final class testSuite
 			final Path instancesDir = instanceDir.getParent();
 			final Path isDir = instancesDir.getParent();
 			final Path wmHomeDir = isDir.getParent();
-			final Path reportFile = new TestSuiteRunner(wmHomeDir).run(packageDir, (s) -> true, testDir,
+			final Path reportFile = new TestSuiteRunner(wmHomeDir).run(packageDir, (s) -> true, testSuiteFileFilter,
+					                                                   testDir,
 												                       isUrl, isUser, isPassword, coverage);
-			map.put("reportFile", reportFile.toString());
+			if (reportFile != null) {
+				map.put("reportFile", reportFile.toString());
+			}
 		} catch (IOException e) {
 			throw new ServiceException(e);
 		}
+			
 		// --- <<IS-END>> ---
 
                 
 	}
+
+	// --- <<IS-START-SHARED>> ---
+	
+	private static Predicate<String> asFilter(String pFilterStr) {
+		if (pFilterStr == null  ||  pFilterStr.length() == 0) {
+			return (s) -> true;
+		} else {
+			String filterStr = pFilterStr;
+			final String patternStr;
+			boolean caseInsensitive;
+			if (filterStr.endsWith("/i")) {
+				caseInsensitive = true;
+				filterStr = filterStr.substring(0, filterStr.length()-2);
+			} else {
+				caseInsensitive = false;
+			}
+			if (filterStr.startsWith("re:")) {
+				patternStr = filterStr.substring(3);
+			} else {
+				final StringBuilder sb = new StringBuilder();
+				sb.append("^");
+				for (int i = 0;  i < filterStr.length();  i++) {
+					final char c = filterStr.charAt(i);
+					switch (c) {
+					  case '?':
+						sb.append(".");
+						break;
+					  case '*':
+						sb.append(".*");
+						break;
+					  case '\\':
+					  case '[':
+					  case ']':
+					    sb.append("\\");
+					    sb.append(c);
+					    break;
+					  default:
+						sb.append(c);
+						break;
+					}
+				}
+				sb.append("$");
+				patternStr = sb.toString();
+			}
+			final Pattern pattern;
+			try {
+				if (caseInsensitive) {
+					pattern = Pattern.compile(patternStr, Pattern.CASE_INSENSITIVE);
+				} else {
+					pattern = Pattern.compile(patternStr);
+				}
+			} catch (PatternSyntaxException pse) {
+				throw new IllegalArgumentException("Invalid filter string " + pFilterStr +
+						                           " (converted to pattern " + patternStr);
+			}
+			return (s) -> {
+				return pattern.matcher(s).matches();
+			};
+		}
+	}
+		
+	// --- <<IS-END-SHARED>> ---
 }
 

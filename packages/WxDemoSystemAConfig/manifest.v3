@@ -5,7 +5,7 @@
   <value name="system_package">no</value>
   <value name="version">2.0.0</value>
   <record name="startup_services" javaclass="com.wm.util.Values">
-    <null name="wx.integrationTest.demoTestedA.admin:startup"/>
+    <null name="wx.demo.systemA.admin:startup"/>
   </record>
   <null name="shutdown_services"/>
   <null name="replication_services"/>

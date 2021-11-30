@@ -2,6 +2,44 @@
 <config>
 	<autoConfig>
 	    <messaging>
+	        <um>
+	            <hosts>${um.admin.hosts}</hosts>
+	            <username>${um.admin.username}</username>
+	            <password>${um.admin.password}</password>
+				<initialContextFactory>com.pcbsys.nirvana.nSpace.NirvanaContextFactory</initialContextFactory>
+
+				<jmsConnectionFactory>
+				    <name>um_local</name>
+				    <connectionFactoryType>ConnectionFactory</connectionFactoryType>
+				    <connectionURL>${um.connectionURL}</connectionURL>
+				    <autoCreateResource>false</autoCreateResource>
+				</jmsConnectionFactory>
+
+                <topic>
+                    <name>ClientToControllerTopic</name>
+                    <useJMSEngine>true</useJMSEngine>
+                    <storageProperties>
+                        <autoMaintanence>true</autoMaintanence>
+                    </storageProperties>
+                </topic>
+
+                <topic>
+                    <name>ControllerToOneClientOfClusterTopic</name>
+                    <useJMSEngine>true</useJMSEngine>
+                    <storageProperties>
+                        <autoMaintanence>true</autoMaintanence>
+                    </storageProperties>
+                </topic>
+
+                <topic>
+                    <name>ControllerToAllClientsOfClusterTopic</name>
+                    <useJMSEngine>true</useJMSEngine>
+                    <storageProperties>
+                        <autoMaintanence>true</autoMaintanence>
+                    </storageProperties>
+                </topic>
+
+            </um>
             <integrationServer>
             	<jmsTrigger>
     				<triggerName>wx.integrationTest.client.trigger:jmsControllerToAllClientsOfClusterTopicTrigger</triggerName>

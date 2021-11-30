@@ -1,3 +1,4 @@
+wx.config.env.LOCAL-DEV=wxconfig-LOCAL-DEV.cnf
 wx.config.env.DEV=wxconfig-DEV.cnf
 wx.config.env.TEST=wxconfig-TEST.cnf
 wx.config.env.QA=wxconfig-QA.cnf

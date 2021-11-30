@@ -3,10 +3,10 @@
     <webMethodsTestCase name="addInts">
         <service folder="pub.math" name="addInts">
             <input>
-                <file filename="resources/test/data/in/IN_addInts.xml"/>
+                <file filename="resources/test/data/addInts_IN.xml"/>
             </input>
             <expected>
-                <file filename="resources/test/data/out/OUT_addInts.xml"/>
+                <file filename="resources/test/data/addInts_OUT.xml"/>
             </expected>
         </service>
     </webMethodsTestCase>

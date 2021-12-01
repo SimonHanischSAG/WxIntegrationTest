@@ -44,9 +44,13 @@ compare with above
 <h4>When using (the official) WxConfig: Configure auto-setup</h4>
 
 Configure 
+
 C:\SoftwareAG\IntegrationServer\instances\default\config\packages\WxIntegrationTestClient\wxconfig-<environmentType>.cnf
-related to 
+
+like
+
 C:\GIT-Repos\WxIntegrationTest\config\packages\WxIntegrationTestClient
+
 e.g. like:
 ```
 um.admin.hosts=nsp://localhost:9000
@@ -115,6 +119,10 @@ http://localhost:5555/rest/wx.integrationTest.controller.ws.runTestSuite?package
 Hint: You may have to configure the ACL etc. for this endpoint probably as it is preconfigured for the ACL "Internal". Furthermore you have to provide WxIntegrationTestController a user at least with the ACL "Developer" and configure it under: 
 
 C:\SoftwareAG\IntegrationServer\instances\default\config\packages\WxIntegrationTestController\wxconfig-<environmentType>.cnf
+
+like 
+  
+C:\GIT-Repos\WxIntegrationTest\config\packages\WxIntegrationTestClient
 
 e.g. like:
 ```  

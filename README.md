@@ -34,12 +34,27 @@ compare with above
 
 <h3>Setup UM stuff</h3>
 
-<h4>Only when using WxConfigLight: Create assets on UM</h4>
+<h4>When using WxConfigLight: Create assets on UM</h4>
 
 <ul>
   <li>Check that DEFAULT_IS_JMS_CONNECTION is enabled. If that is not possible use EnterpriseManager to check and create the necessary connection factory local_um</li>
   <li>Use EnterpriseManager to create the topics ClientToControllerTopic, ControllerToOneClientOfClusterTopic and ControllerToAllClientsOfClusterTopic (and everntually the queues internal/SystemBTransferInboundQueue, external/SystemBInboundQueue if you want to run the demo tests)</li>
 </ul>
+
+<h4>When using (the official) WxConfig: Configure auto-setup</h4>
+
+Configure 
+C:\SoftwareAG\IntegrationServer\instances\default\config\packages\WxIntegrationTestClient\wxconfig-<environmentType>.cnf
+related to 
+C:\GIT-Repos\WxIntegrationTest\config\packages\WxIntegrationTestClient
+e.g. like:
+```
+um.admin.hosts=nsp://localhost:9000
+um.admin.username=
+um.admin.password=
+um.connectionURL=nsp://localhost:9000
+```
+and reload WxIntegrationTestClient.
 
 <h4>Create JMS connection for WxIntegrationTestController</h4>
 

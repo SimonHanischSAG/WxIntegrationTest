@@ -88,7 +88,13 @@ You can execute a test manually by running the related Flow service with a speci
 
 <h3>Run demo tests via REST</h3>
 
-There will be a REST endpoint in WxIntegrationTestController in future in order to run all WmTestSuite tests of a package with a simple HTTP-GET.
+You can run the demo tests via this URL:
+
+http://localhost:5555/rest/wx.integrationTest.controller.ws.runTestSuite?package=WxIntegrationTestDemo
+
+You can also run the WmTestSuite tests from other packages and also use a file filter (e.g. for files depending on your target stage):
+
+http://localhost:5555/rest/wx.integrationTest.controller.ws.runTestSuite?package=MyOtherPackage&testSuiteFileFilter=*DEV.xml
 
 <h1>How to use</h1>
 

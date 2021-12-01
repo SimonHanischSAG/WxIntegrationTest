@@ -6,13 +6,16 @@ import com.wm.data.*;
 import com.wm.util.Values;
 import com.wm.app.b2b.server.Service;
 import com.wm.app.b2b.server.ServiceException;
+
+import java.io.IOException;
 // --- <<IS-START-IMPORTS>> ---
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.Date;
 import java.util.Map.Entry;
 import java.util.Set;
-import java.util.Vector;
 import java.util.concurrent.ConcurrentHashMap;
-import java.util.function.BiConsumer;
 import com.softwareag.util.IDataMap;
 // --- <<IS-END-IMPORTS>> ---
 
@@ -164,6 +167,37 @@ public final class util
 
 
 
+	public static final void readFile (IData pipeline)
+        throws ServiceException
+	{
+		// --- <<IS-START(readFile)>> ---
+		// @sigtype java 3.5
+		// [i] field:0:required file
+		// [o] object:0:required bytes
+		final IDataMap map = new IDataMap(pipeline);
+		final String fileStr = map.getAsString("file");
+		if (fileStr == null) {
+			throw new NullPointerException("Missing parameter: file");
+		}
+		if (fileStr.length() == 0) {
+			throw new IllegalArgumentException("Empty parameter: file");
+		}
+		final Path file = Paths.get(fileStr);
+		if (!Files.isRegularFile(file)) {
+			throw new IllegalArgumentException("Illegal argument for parameter file: " + file + " (Doesn't exist, or is not a file)");
+		}
+		try {
+			map.put("bytes", Files.readAllBytes(file));
+		} catch (IOException e) {
+			throw new ServiceException(e);
+		}		
+		// --- <<IS-END>> ---
+
+                
+	}
+
+
+
 	public static final void replacePipeline (IData pipeline)
         throws ServiceException
 	{
@@ -182,6 +216,32 @@ public final class util
 			pipeMap.put(key, compensatingPipeMap.get(key));
 		}
 		
+		// --- <<IS-END>> ---
+
+                
+	}
+
+
+
+	public static final void resolvePath (IData pipeline)
+        throws ServiceException
+	{
+		// --- <<IS-START(resolvePath)>> ---
+		// @sigtype java 3.5
+		// [i] field:0:required directory
+		// [i] field:0:required relativePath
+		// [o] field:0:required outputPath
+		final IDataMap map = new IDataMap(pipeline);
+		final String dirStr = map.getAsString("directory");
+		if (dirStr == null) {
+			throw new NullPointerException("Missing parameter: directory");
+		}
+		final Path dir = Paths.get(dirStr);
+		final String relativePath = map.getAsString("relativePath");
+		if (relativePath == null) {
+			throw new NullPointerException("Missing parameter: relativePath");
+		}
+		map.put("outputPath", dir.resolve(relativePath).toString());
 		// --- <<IS-END>> ---
 
                 

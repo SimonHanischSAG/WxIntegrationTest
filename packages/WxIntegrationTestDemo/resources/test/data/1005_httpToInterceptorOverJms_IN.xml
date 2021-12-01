@@ -4,7 +4,7 @@
   <record javaclass="com.wm.data.ISMemDataImpl">
     <value name="testId">1005</value>
     <record name="callHttpRequest" javaclass="com.wm.data.ISMemDataImpl">
-      <value name="url">http://localhost:5555/rest/wx.demo.systemA.pub.ws.resourceX</value>
+      <value name="url">http://localhost:5555/rest/wx.demo.systemA.ws.resourceX</value>
       <value name="method">post</value>
       <value name="loadAs">string</value>
       <record name="data" javaclass="com.wm.data.ISMemDataImpl">

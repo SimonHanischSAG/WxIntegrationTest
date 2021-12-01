@@ -55,7 +55,7 @@
     				</destinations>
     				<routingRules>
     					<ruleName>Rule1</ruleName>
-    					<serviceName>wx.integrationTest.client.impl:handleControllerMessage</serviceName>
+    					<serviceName>wx.integrationTest.client.pub:handleControllerMessage</serviceName>
     				</routingRules>
     				<enabled>true</enabled>
     				<maxRetryAttempts>2000000000</maxRetryAttempts>
@@ -78,7 +78,7 @@
     				</destinations>
     				<routingRules>
     					<ruleName>Rule1</ruleName>
-    					<serviceName>wx.integrationTest.client.impl:handleControllerMessage</serviceName>
+    					<serviceName>wx.integrationTest.client.pub:handleControllerMessage</serviceName>
     				</routingRules>
     				<enabled>true</enabled>
     				<maxRetryAttempts>2000000000</maxRetryAttempts>

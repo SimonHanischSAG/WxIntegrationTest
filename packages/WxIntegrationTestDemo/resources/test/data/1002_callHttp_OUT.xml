@@ -5,7 +5,7 @@
     <record name="body" javaclass="com.wm.util.Values">
       <value name="string">{"field":"xyz","date":"2021-12-12T12:12:12+0000","number":"42"}</value>
     </record>
-    <value name="encodedURL">http://localhost:5555/rest/wx.demo.systemA.pub.ws.resourceX</value>
+    <value name="encodedURL">http://localhost:5555/rest/wx.demo.systemA.ws.resourceX</value>
     <record name="header" javaclass="com.wm.util.Values">
       <record name="lines" javaclass="com.wm.util.Values">
         <value name="Content-Type">application/json; charset=UTF-8</value>

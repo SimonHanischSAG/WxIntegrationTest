@@ -20,9 +20,9 @@
       <value name="onError">true</value>
     </record>
     <record name="redeliveryOptions" javaclass="com.wm.util.Values">
-      <value name="max">0</value>
+      <value name="max">2000000000</value>
       <value name="delayInterval">10000</value>
-      <value name="onRedeliveryFailure">0</value>
+      <value name="onRedeliveryFailure">1</value>
     </record>
     <value name="joinTimeout">86400000</value>
     <value name="maxConcurrentThreads">1</value>
@@ -33,7 +33,7 @@
     <value name="executeUser">Administrator</value>
     <value name="aliasName">DEFAULT_IS_JMS_CONNECTION</value>
     <number name="jmsTriggerType" type="Integer">0</number>
-    <Boolean name="enabled">false</Boolean>
+    <Boolean name="enabled">true</Boolean>
     <value name="prefetchSize">10</value>
     <value name="connectionCount">1</value>
     <value name="inactiveWaitTime">1500</value>
@@ -55,7 +55,5 @@
         <number name="destinationType" type="Integer">0</number>
       </record>
     </array>
-    <number name="totalThrottledSessions" type="Integer">0</number>
-    <value name="aliasType">jndi</value>
   </record>
 </Values>

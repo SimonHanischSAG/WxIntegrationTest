@@ -96,6 +96,20 @@ You can also run the WmTestSuite tests from other packages and also use a file f
 
 http://localhost:5555/rest/wx.integrationTest.controller.ws.runTestSuite?package=MyOtherPackage&testSuiteFileFilter=*DEV.xml
 
+Hint: You may have to configure the ACL etc. for this endpoint probably as it is preconfigured for the ACL "Internal". Furthermore you have to provide WxIntegrationTestController a user with the ACL Developer and configure it under: 
+
+C:\SoftwareAG\IntegrationServer\instances\default\config\packages\WxIntegrationTestController\wxconfig-<environmentType>.cnf
+
+e.g. like:
+```  
+# For access from WmTestSuite to IS:
+# required:
+isTestUser=WxIntegrationTestController-Package
+isTestPassword=manage
+# optional:
+isTestUrl=http://localhost:5555
+```
+
 <h1>How to use</h1>
 
 <h2>Common stuff</h2>

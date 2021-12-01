@@ -34,11 +34,11 @@ compare with above
 
 <h3>Setup UM stuff</h3>
 
-Use EnterpriseManager to access the UM referenced by DEFAULT_IS_JMS_CONNECTION:
+<h4>Only when using WxConfigLight: Create assets on UM</h4>
 
 <ul>
-  <li>Create ConnectionFactory local_um and check that DEFAULT_IS_JMS_CONNECTION is enabled</li>
-  <li>Create the topics ClientToControllerTopic, ControllerToOneClientOfClusterTopic and ControllerToAllClientsOfClusterTopic (and everntually the queues internal/SystemBTransferInboundQueue, external/SystemBInboundQueue if you want to run the demo tests)</li>
+  <li>Check that DEFAULT_IS_JMS_CONNECTION is enabled. If that is not possible use EnterpriseManager to check and create the necessary connection factory local_um</li>
+  <li>Use EnterpriseManager to create the topics ClientToControllerTopic, ControllerToOneClientOfClusterTopic and ControllerToAllClientsOfClusterTopic (and everntually the queues internal/SystemBTransferInboundQueue, external/SystemBInboundQueue if you want to run the demo tests)</li>
 </ul>
 
 <h4>Create JMS connection for WxIntegrationTestController</h4>
@@ -47,22 +47,23 @@ Create a JMS connection alias WxIntegrationTestController_IS_JMS_CONNECTION as a
 
 <h3>Deploy/checkout WxIntegrationTest* packages</h3>
 
-Check under releases for a proper release and deploy it. Otherwise you can check out the latest version from GIT and create a link like this:
+Check under releases for a proper release and deploy it (at least the minimal setup, compare with below). Otherwise you can check out the latest version from GIT and create a links like this:
 
+Minimal setup:
 ```
 mklink /J F:\\SoftwareAG\\IntegrationServer\\instances\\default\\packages\\WxIntegrationTestDoc F:\\GIT-Repos\\WxIntegrationTest\\packages\\WxIntegrationTestDoc
 mklink /J F:\\SoftwareAG\\IntegrationServer\\instances\\default\\packages\\WxIntegrationTestClient F:\\GIT-Repos\\WxIntegrationTest\\packages\\WxIntegrationTestClient
 mklink /J F:\\SoftwareAG\\IntegrationServer\\instances\\default\\packages\\WxIntegrationTestController F:\\GIT-Repos\\WxIntegrationTest\\packages\\WxIntegrationTestController
-
+```
+In order to run the demo you have furthermore create links like that:
+```
 mklink /J F:\\SoftwareAG\\IntegrationServer\\instances\\default\\packages\\WxDemoCanonicals F:\\GIT-Repos\\WxIntegrationTest\\packages\\WxDemoCanonicals
 mklink /J F:\\SoftwareAG\\IntegrationServer\\instances\\default\\packages\\WxDemoSystemA F:\\GIT-Repos\\WxIntegrationTest\\packages\\WxDemoSystemA
 mklink /J F:\\SoftwareAG\\IntegrationServer\\instances\\default\\packages\\WxDemoSystemAConfig F:\\GIT-Repos\\WxIntegrationTest\\packages\\WxDemoSystemAConfig
 mklink /J F:\\SoftwareAG\\IntegrationServer\\instances\\default\\packages\\WxDemoSystemB F:\\GIT-Repos\\WxIntegrationTest\\packages\\WxDemoSystemB
 mklink /J F:\\SoftwareAG\\IntegrationServer\\instances\\default\\packages\\WxDemoSystemBConfig F:\\GIT-Repos\\WxIntegrationTest\\packages\\WxDemoSystemBConfig
-
+mklink /J F:\\SoftwareAG\\IntegrationServer\\instances\\default\\packages\\WxIntegrationTestDemo F:\\GIT-Repos\\WxIntegrationTest\\packages\\WxIntegrationTestDemo
 ```
-
-
 
 <h4>Build & Reload</h4>
 
@@ -70,7 +71,6 @@ If you checkout the sources from GitHub you have to compile the source, e.g. wit
 
 C:\SoftwareAG\IntegrationServer\instances\default\bin\jcode.bat makeall WxIntegrationTestClient
 C:\SoftwareAG\IntegrationServer\instances\default\bin\jcode.bat makeall WxIntegrationTestController
-C:\SoftwareAG\IntegrationServer\instances\default\bin\jcode.bat makeall WxIntegrationTestDoc
 
 Reload the packages
 
@@ -96,7 +96,7 @@ You can also run the WmTestSuite tests from other packages and also use a file f
 
 http://localhost:5555/rest/wx.integrationTest.controller.ws.runTestSuite?package=MyOtherPackage&testSuiteFileFilter=*DEV.xml
 
-Hint: You may have to configure the ACL etc. for this endpoint probably as it is preconfigured for the ACL "Internal". Furthermore you have to provide WxIntegrationTestController a user with the ACL Developer and configure it under: 
+Hint: You may have to configure the ACL etc. for this endpoint probably as it is preconfigured for the ACL "Internal". Furthermore you have to provide WxIntegrationTestController a user at least with the ACL "Developer" and configure it under: 
 
 C:\SoftwareAG\IntegrationServer\instances\default\config\packages\WxIntegrationTestController\wxconfig-<environmentType>.cnf
 

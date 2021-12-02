@@ -10,3 +10,4 @@ testclient.connection=DEFAULT_IS_JMS_CONNECTION
 
 testclient.clusterName=default
 testclient.hostname=se1-esbt-t062.tasp.tclidl.net
+testclient.port=5555

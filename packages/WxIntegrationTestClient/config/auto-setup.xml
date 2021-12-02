@@ -50,7 +50,7 @@
     				<destinations>
     					<destination>ControllerToAllClientsOfClusterTopic</destination>
     					<destinationType>Topic</destinationType>
-    					<durableSubscriberName>WxIntegrationTestClient_${testclient.hostname}_Subscriber</durableSubscriberName>
+    					<durableSubscriberName>WxIntegrationTestClient_${testclient.hostname}_${testclient.port}_Subscriber</durableSubscriberName>
     					<messageSelector>clusterName = '${testclient.clusterName}' OR clusterName IS NULL</messageSelector>
     				</destinations>
     				<routingRules>

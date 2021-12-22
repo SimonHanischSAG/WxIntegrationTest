@@ -108,7 +108,7 @@ You can execute a test manually by running the related Flow service with a speci
 
 <h3>Run demo tests via REST</h3>
 
-You can run the demo tests via this URL:
+You can run the demo tests via this URL (not working yet in 2.1.0):
 
 http://localhost:5555/rest/wx.integrationTest.controller.ws.runTestSuite?package=WxIntegrationTestDemo
 

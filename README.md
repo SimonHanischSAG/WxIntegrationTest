@@ -24,7 +24,17 @@ It is no problem if there are several servers with the package WxIntegrationTest
 <h2>Installation</h2>
 
 <h3>Provide WxInterceptor</h3>
-compare with above
+Follow the documentation of WxInterceptor and ensure that there are the following libs:
+
+Under C:\SoftwareAG\IntegrationServer\instances\default\lib\jars\custom:
+<ol>
+  <li>commons-jexl3-3.1</li>
+  <li>commons-lang3-3.6</li>
+  <li>commons-logging-1.2</li>
+  <li>commons-math3-3.3</li>
+  <li>wxinterceptor_server-1.3.1</li>
+</ol>
+
 
 <h3>Provide WxConfig or WxConfigLight</h3>
 compare with above

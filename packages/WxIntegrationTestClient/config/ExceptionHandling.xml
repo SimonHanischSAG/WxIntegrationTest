@@ -5,6 +5,7 @@
                     <location name="testclient">
        					<exception type="all" errorToBeThrown="NONE" exceptionHandlingId="WxIntegrationTestClient.top.001">
        						<handling>wx.resilience.pub.resilience.errorHandling:logError</handling>
+							<handling>wx.resilience.pub.resilience.errorHandling:publishErrorStatus</handling>
        					</exception>
                     </location>
 			</location>

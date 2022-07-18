@@ -9,5 +9,5 @@ wx.config.incl=auto-setup.xml
 testclient.connection=DEFAULT_IS_JMS_CONNECTION
 
 testclient.clusterName=default
-testclient.hostname=UNKNOWN
-testclient.port=UNKNOWN
+testclient.hostname=localhost
+testclient.port=5555

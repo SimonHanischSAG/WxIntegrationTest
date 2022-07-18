@@ -16,7 +16,6 @@
     </record>
     <record name="payload" javaclass="com.wm.data.ISMemDataImpl">
       <value name="fieldInCapital">XYZ</value>
-      <value name="dateWithoutTimezone">2021-12-12T13:12:12</value>
       <value name="numberWithLeadingZeros">0042</value>
     </record>
   </record>

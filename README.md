@@ -48,6 +48,7 @@ compare with above
 
 <ul>
   <li>Check that DEFAULT_IS_JMS_CONNECTION is enabled. If that is not possible use EnterpriseManager to check and create the necessary connection factory local_um</li>
+  <li>Create a duplicate of DEFAULT_IS_JMS_CONNECTION and name it WxIntegrationTest_IS_JMS_CONNECTION</li>
   <li>Use EnterpriseManager to create the topics ClientToControllerTopic, ControllerToOneClientOfClusterTopic and ControllerToAllClientsOfClusterTopic (and everntually the queues internal/SystemBTransferInboundQueue, external/SystemBInboundQueue if you want to run the demo tests)</li>
 </ul>
 

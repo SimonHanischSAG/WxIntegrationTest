@@ -23,6 +23,10 @@ It is no problem if there are several servers with the package WxIntegrationTest
 
 <h2>Installation</h2>
 
+<h3>Provide WmTestSuite</h3>
+
+Install WmTestSuite in order to run the tests via Designer/WmTestSuite. Install at least the libs under common/lib/testsuite in order to run the tests via REST (compare with below).
+
 <h3>Provide WxInterceptor</h3>
 Follow the documentation of WxInterceptor and ensure that there are the following libs:
 

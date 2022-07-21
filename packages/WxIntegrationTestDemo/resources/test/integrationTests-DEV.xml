@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <webMethodsTestSuite description="" name="Integration Tests">
-    <webMethodsTestCase description="Auto generated test for service wx.integrationTest.controller.pub.standardtests:testPingClients" name="1000: Test for wx.integrationTest.controller.pub.standardtests:testPingClients">
+    <webMethodsTestCase description="Pint localhost" name="1000: Test for wx.integrationTest.controller.pub.standardtests:testPingClients">
         <service folder="wx.integrationTest.controller.pub.standardtests" name="testPingClients">
             <input>
                 <file filename="resources/test/data/1000_testPing_IN.xml"/>
@@ -10,7 +10,7 @@
             </expected>
         </service>
     </webMethodsTestCase>
-    <webMethodsTestCase description="Auto generated test for service wx.integrationTest.controller.pub.standardtests:testInvokeService" name="1001: Test for wx.integrationTest.controller.pub.standardtests:testInvokeService">
+    <webMethodsTestCase description="Invoke wx.demo.systemA.pub:getResourceX" name="1001: Test for wx.integrationTest.controller.pub.standardtests:testInvokeService">
         <service folder="wx.integrationTest.controller.pub.standardtests" name="testInvokeService">
             <input>
                 <file filename="resources/test/data/1001_invokeService_IN.xml"/>
@@ -30,7 +30,7 @@
             </expected>
         </service>
     </webMethodsTestCase>
-    <webMethodsTestCase description="Auto generated test for service wx.integrationTest.controller.pub.standardtests:testJmsToInterceptor" name="1003: Test for wx.integrationTest.controller.pub.standardtests:testJmsToInterceptor">
+    <webMethodsTestCase description="Send message via internal/SystemBTransferInboundQueue to systemB" name="1003: Test for wx.integrationTest.controller.pub.standardtests:testJmsToInterceptor">
         <service folder="wx.integrationTest.controller.pub.standardtests" name="testJmsToInterceptor">
             <input>
                 <file filename="resources/test/data/1003_jmsToInterceptor_IN.xml"/>
@@ -40,7 +40,8 @@
             </expected>
         </service>
     </webMethodsTestCase>
-    <webMethodsTestCase description="Auto generated test for service wx.integrationTest.controller.pub.standardtests:testHttpToInterceptor" name="1004: Test for wx.integrationTest.controller.pub.standardtests:testHttpToInterceptor">
+    <webMethodsTestCase
+        description="Call http://localhost:5555/rest/wx.demo.systemA.ws.resourceX and intercept on service wx.demo.systemA.ws.resourceX:_get" name="1004: Test for wx.integrationTest.controller.pub.standardtests:testHttpToInterceptor">
         <service folder="wx.integrationTest.controller.pub.standardtests" name="testHttpToInterceptor">
             <input>
                 <file filename="resources/test/data/1004_httpToInterceptor_IN.xml"/>
@@ -50,7 +51,7 @@
             </expected>
         </service>
     </webMethodsTestCase>
-    <webMethodsTestCase description="Auto generated test for service wx.integrationTest.controller.pub.standardtests:testHttpToInterceptor" name="1005: Test for wx.integrationTest.controller.pub.standardtests:testHttpToInterceptor">
+    <webMethodsTestCase description="Call http://localhost:5555/rest/wx.demo.systemA.ws.resourceX and intercept in wx.demo.systemB.impl:sendToSystemB" name="1005: Test for wx.integrationTest.controller.pub.standardtests:testHttpToInterceptor">
         <service folder="wx.integrationTest.controller.pub.standardtests" name="testHttpToInterceptor">
             <input>
                 <file filename="resources/test/data/1005_httpToInterceptorOverJms_IN.xml"/>
@@ -60,13 +61,24 @@
             </expected>
         </service>
     </webMethodsTestCase>
-    <webMethodsTestCase description="Auto generated test for service wx.integrationTest.demo.pub:myTestInvokeServiceTwice" name="1006: Test for wx.integrationTest.demo.pub:myTestInvokeServiceTwice">
+    <webMethodsTestCase description="Invoke wx.demo.systemA.pub:getResourceX twice" name="1006: Test for wx.integrationTest.demo.pub:myTestInvokeServiceTwice">
         <service folder="wx.integrationTest.demo.pub" name="myTestInvokeServiceTwice">
             <input>
                 <file filename="resources/test/data/1006_myTestInvokeServiceTwice_IN.xml"/>
             </input>
             <expected>
                 <file/>
+            </expected>
+        </service>
+    </webMethodsTestCase>
+    <webMethodsTestCase
+        description="Call http://localhost:5555/rest/wx.demo.systemA.ws.resourceX, test roundtrip to SystemB and status back and intercept in wx.demo.systemA.impl:sendStatus" name="1007: Test for wx.integrationTest.controller.pub.standardtests:testHttpToInterceptor">
+        <service folder="wx.integrationTest.controller.pub.standardtests" name="testHttpToInterceptor">
+            <input>
+                <file filename="resources/test/data/1007_httpToInterceptorForStatus_IN.xml"/>
+            </input>
+            <expected>
+                <file filename="resources/test/data/1007_httpToInterceptorForStatus_OUT.xml"/>
             </expected>
         </service>
     </webMethodsTestCase>

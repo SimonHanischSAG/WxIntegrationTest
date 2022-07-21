@@ -63,7 +63,7 @@
         <value name="is_global">false</value>
         <value name="rec_closed">true</value>
         <value name="modifiable">true</value>
-        <value name="rec_ref">wx.integrationTest.canonicals:resourceX</value>
+        <value name="rec_ref">wx.demo.canonicals:resourceX</value>
       </record>
     </array>
     <value name="modifiable">true</value>
@@ -101,7 +101,7 @@
         <value name="is_global">false</value>
         <value name="rec_closed">true</value>
         <value name="modifiable">true</value>
-        <value name="rec_ref">wx.integrationTest.canonicals:resourceX</value>
+        <value name="rec_ref">wx.demo.canonicals:resourceX</value>
       </record>
     </array>
     <value name="modifiable">true</value>
@@ -119,7 +119,7 @@
 
   <!-- nodes -->
 
-<MAPCOPY FROM="/resourceX;4;0;wx.integrationTest.canonicals:resourceX/field;1;0" TO="/inString;1;0">
+<MAPCOPY FROM="/resourceX;4;0;wx.demo.canonicals:resourceX/field;1;0" TO="/inString;1;0">
 </MAPCOPY>
 </MAP>
 
@@ -211,7 +211,7 @@
         <value name="is_global">false</value>
         <value name="rec_closed">true</value>
         <value name="modifiable">true</value>
-        <value name="rec_ref">wx.integrationTest.canonicals:resourceX</value>
+        <value name="rec_ref">wx.demo.canonicals:resourceX</value>
       </record>
     </array>
     <value name="modifiable">true</value>
@@ -263,7 +263,7 @@
         <value name="is_global">false</value>
         <value name="rec_closed">true</value>
         <value name="modifiable">true</value>
-        <value name="rec_ref">wx.integrationTest.canonicals:resourceX</value>
+        <value name="rec_ref">wx.demo.canonicals:resourceX</value>
       </record>
     </array>
     <value name="modifiable">true</value>
@@ -281,7 +281,7 @@
 
   <!-- nodes -->
 
-<MAPCOPY FROM="/resourceX;4;0;wx.integrationTest.canonicals:resourceX/date;1;0" TO="/inString;1;0">
+<MAPCOPY FROM="/resourceX;4;0;wx.demo.canonicals:resourceX/date;1;0" TO="/inString;1;0">
 </MAPCOPY>
 
 <MAPSET NAME="Setter" OVERWRITE="true" VARIABLES="false" GLOBALVARIABLES="false" FIELD="/currentPattern;1;0">
@@ -446,7 +446,7 @@
         <value name="is_global">false</value>
         <value name="rec_closed">true</value>
         <value name="modifiable">true</value>
-        <value name="rec_ref">wx.integrationTest.canonicals:resourceX</value>
+        <value name="rec_ref">wx.demo.canonicals:resourceX</value>
       </record>
     </array>
     <value name="modifiable">true</value>
@@ -498,7 +498,7 @@
         <value name="is_global">false</value>
         <value name="rec_closed">true</value>
         <value name="modifiable">true</value>
-        <value name="rec_ref">wx.integrationTest.canonicals:resourceX</value>
+        <value name="rec_ref">wx.demo.canonicals:resourceX</value>
       </record>
     </array>
     <value name="modifiable">true</value>
@@ -516,7 +516,7 @@
 
   <!-- nodes -->
 
-<MAPCOPY FROM="/resourceX;4;0;wx.integrationTest.canonicals:resourceX/number;1;0" TO="/num;1;0">
+<MAPCOPY FROM="/resourceX;4;0;wx.demo.canonicals:resourceX/number;1;0" TO="/num;1;0">
 </MAPCOPY>
 
 <MAPSET NAME="Setter" OVERWRITE="true" VARIABLES="false" GLOBALVARIABLES="false" FIELD="/pattern;1;0">
@@ -616,7 +616,7 @@
         <value name="is_global">false</value>
         <value name="rec_closed">true</value>
         <value name="modifiable">true</value>
-        <value name="rec_ref">wx.integrationTest.canonicals:resourceX</value>
+        <value name="rec_ref">wx.demo.canonicals:resourceX</value>
       </record>
     </array>
     <value name="modifiable">true</value>
@@ -626,7 +626,7 @@
 
   <!-- nodes -->
 
-<MAPDELETE FIELD="/resourceX;4;0;wx.integrationTest.canonicals:resourceX">
+<MAPDELETE FIELD="/resourceX;4;0;wx.demo.canonicals:resourceX">
 </MAPDELETE>
 </MAP>
 </FLOW>

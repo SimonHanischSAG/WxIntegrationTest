@@ -44,7 +44,7 @@
     <array name="routingRules" type="record" depth="1">
       <record javaclass="com.wm.util.Values">
         <value name="ruleName">Rule1</value>
-        <value name="serviceName">wx.demo.systemA.pub:handleStatus</value>
+        <value name="serviceName">wx.demo.systemA.impl.top:handleStatus</value>
         <value name="filter"></value>
       </record>
     </array>
@@ -57,5 +57,8 @@
         <Boolean name="durableSubscriberNoLocal">false</Boolean>
       </record>
     </array>
+    <number name="totalThrottledSessions" type="Integer">0</number>
+    <value name="aliasType">jndi</value>
+    <value name="priorityEnabled">false</value>
   </record>
 </Values>

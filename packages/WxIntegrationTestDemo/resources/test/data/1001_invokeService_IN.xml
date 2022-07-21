@@ -4,7 +4,7 @@
   <record javaclass="com.wm.data.ISMemDataImpl">
     <value name="testId">1001</value>
     <record name="invokeServiceRequest" javaclass="com.wm.data.ISMemDataImpl">
-      <value name="ifcname">wx.demo.systemA.pub</value>
+      <value name="ifcname">wx.demo.systemA.impl.top</value>
       <value name="svcname">getResourceX</value>
     </record>
   </record>

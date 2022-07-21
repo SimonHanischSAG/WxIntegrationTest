@@ -228,7 +228,7 @@
         <value name="is_global">false</value>
         <value name="rec_closed">true</value>
         <value name="modifiable">true</value>
-        <value name="rec_ref">wx.integrationTest.canonicals:resourceX</value>
+        <value name="rec_ref">wx.demo.canonicals:resourceX</value>
       </record>
     </array>
     <value name="modifiable">true</value>
@@ -352,7 +352,7 @@
 </DATA>
 </MAPSET>
 
-<MAPCOPY FROM="/resourceX;4;0;wx.integrationTest.canonicals:resourceX/number;1;0" TO="/customProperties;4;1;wx.resilience.doc:customProperties/value;1;0">
+<MAPCOPY FROM="/resourceX;4;0;wx.demo.canonicals:resourceX/number;1;0" TO="/customProperties;4;1;wx.resilience.doc:customProperties/value;1;0">
 </MAPCOPY>
 </MAP>
 
@@ -475,7 +475,7 @@
         <value name="is_global">false</value>
         <value name="rec_closed">true</value>
         <value name="modifiable">true</value>
-        <value name="rec_ref">wx.integrationTest.canonicals:resourceX</value>
+        <value name="rec_ref">wx.demo.canonicals:resourceX</value>
       </record>
       <record javaclass="com.wm.util.Values">
         <value name="node_type">record</value>
@@ -656,7 +656,7 @@
 </MAP>
 </INVOKE>
 
-<INVOKE TIMEOUT="" SERVICE="wx.demo.systemA.pub:sendResourceX" VALIDATE-IN="$none" VALIDATE-OUT="$none">
+<INVOKE TIMEOUT="" SERVICE="wx.demo.systemA.impl.sub:sendResourceX" VALIDATE-IN="$none" VALIDATE-OUT="$none">
   <COMMENT></COMMENT>
 </INVOKE>
 </SEQUENCE>

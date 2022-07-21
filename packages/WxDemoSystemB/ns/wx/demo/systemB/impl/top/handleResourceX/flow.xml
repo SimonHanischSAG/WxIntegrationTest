@@ -302,7 +302,7 @@
 </MAP>
 </INVOKE>
 
-<INVOKE TIMEOUT="" SERVICE="wx.demo.systemB.impl:mapResourceX" VALIDATE-IN="$none" VALIDATE-OUT="$none">
+<INVOKE TIMEOUT="" SERVICE="wx.demo.systemB.impl.sub:mapResourceX" VALIDATE-IN="$none" VALIDATE-OUT="$none">
   <COMMENT></COMMENT>
 
   <!-- nodes -->
@@ -340,7 +340,7 @@
         <value name="is_global">false</value>
         <value name="rec_closed">true</value>
         <value name="modifiable">true</value>
-        <value name="rec_ref">wx.integrationTest.canonicals:resourceX</value>
+        <value name="rec_ref">wx.demo.canonicals:resourceX</value>
       </record>
     </array>
     <value name="modifiable">true</value>
@@ -436,7 +436,7 @@
 
   <!-- nodes -->
 
-<MAPCOPY FROM="/wxMessage;4;0;wx.resilience.doc:wxMessage/payload;2;0" TO="/resourceX;4;0;wx.integrationTest.canonicals:resourceX">
+<MAPCOPY FROM="/wxMessage;4;0;wx.resilience.doc:wxMessage/payload;2;0" TO="/resourceX;4;0;wx.demo.canonicals:resourceX">
 </MAPCOPY>
 
 <MAPDELETE FIELD="/wxMessage;4;0;wx.resilience.doc:wxMessage">
@@ -468,7 +468,7 @@
         <value name="form_qualified">false</value>
         <value name="is_global">false</value>
         <value name="modifiable">true</value>
-        <value name="rec_ref">wx.integrationTest.canonicals:resourceX</value>
+        <value name="rec_ref">wx.demo.canonicals:resourceX</value>
       </record>
       <record javaclass="com.wm.util.Values">
         <value name="node_type">unknown</value>
@@ -566,12 +566,12 @@
 
   <!-- nodes -->
 
-<MAPDELETE FIELD="/resourceX;4;0;wx.integrationTest.canonicals:resourceX">
+<MAPDELETE FIELD="/resourceX;4;0;wx.demo.canonicals:resourceX">
 </MAPDELETE>
 </MAP>
 </INVOKE>
 
-<INVOKE TIMEOUT="" SERVICE="wx.demo.systemB.impl:sendToSystemB" VALIDATE-IN="$none" VALIDATE-OUT="$none">
+<INVOKE TIMEOUT="" SERVICE="wx.demo.systemB.impl.sub:sendToSystemB" VALIDATE-IN="$none" VALIDATE-OUT="$none">
   <COMMENT></COMMENT>
 
   <!-- nodes -->

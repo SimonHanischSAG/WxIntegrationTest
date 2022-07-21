@@ -15,7 +15,7 @@
       </record>
     </record>
     <record name="registerInterceptorRequest" javaclass="com.wm.data.ISMemDataImpl">
-      <value name="serviceName">wx.demo.systemA.impl:sendStatus</value>
+      <value name="serviceName">wx.demo.systemA.impl.sub:sendStatus</value>
       <array name="filterExpressionsList" type="value" depth="1">
         <value>JMSMessage.properties.source=='SystemB'</value>
       </array>

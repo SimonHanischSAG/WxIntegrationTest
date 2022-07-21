@@ -29,7 +29,7 @@
       </record>
     </record>
     <record name="registerInterceptorRequest" javaclass="com.wm.data.ISMemDataImpl">
-      <value name="serviceName">wx.demo.systemB.impl:sendToSystemB</value>
+      <value name="serviceName">wx.demo.systemB.impl.sub:sendToSystemB</value>
       <array name="filterExpressionsList" type="value" depth="1">
         <value>metaData.uuid == '7101ecb5-5e37-4441-995e-26a5e996bd43'</value>
       </array>

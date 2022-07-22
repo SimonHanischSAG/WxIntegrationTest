@@ -52,7 +52,7 @@ compare with above
 
 <ul>
   <li>Check that DEFAULT_IS_JMS_CONNECTION is enabled. If that is not possible use EnterpriseManager to check and create the necessary connection factory local_um</li>
-  <li>Use EnterpriseManager to create the topics ClientToControllerTopic, ControllerToOneClientOfClusterTopic and ControllerToAllClientsOfClusterTopic (and everntually the queues internal/SystemBTransferInQueue, SystemBInQueue if you want to run the demo tests)</li>
+  <li>Use EnterpriseManager to create the topics internal/ClientToControllerTopic, internal/ControllerToOneClientOfClusterTopic and internal/ControllerToAllClientsOfClusterTopic (and everntually the queues internal/SystemBTransferInQueue, SystemBInQueue if you want to run the demo tests)</li>
 </ul>
 
 <h4>When using (the official) WxConfig: Configure auto-setup</h4>

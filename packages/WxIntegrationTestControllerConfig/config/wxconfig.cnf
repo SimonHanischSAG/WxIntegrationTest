@@ -1,5 +1,0 @@
-wx.config.env.LOCAL-DEV=../../../config/packages/WxIntegrationTestControllerConfig/wxconfig-LOCAL-DEV.cnf
-wx.config.env.DEV=../../../config/packages/WxIntegrationTestControllerConfig/wxconfig-DEV.cnf
-wx.config.env.TEST=../../../config/packages/WxIntegrationTestControllerConfig/wxconfig-TEST.cnf
-wx.config.env.QA=../../../config/packages/WxIntegrationTestControllerConfig/wxconfig-QA.cnf
-wx.config.env.PROD=../../../config/packages/WxIntegrationTestControllerConfig/wxconfig-PROD.cnf

@@ -57,5 +57,6 @@
     <number name="totalThrottledSessions" type="Integer">1</number>
     <value name="aliasType">jndi</value>
     <value name="uniqueId">G2YrXJBo3wWRGqCu3hL15HBen8Y=</value>
+    <value name="priorityEnabled">false</value>
   </record>
 </Values>

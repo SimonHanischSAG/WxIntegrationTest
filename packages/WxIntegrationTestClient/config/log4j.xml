@@ -4,21 +4,21 @@
 <!-- Optional definition for usage of WxLog2 -->
 
 <log4j:configuration>
-  <appender name="WxIntegrationTestController"
+  <appender name="WxIntegrationTestClient"
     class="org.apache.log4j.RollingFileAppender">
       <param name="MaxFileSize" value="10MB" />
       <param name="MaxBackupIndex" value="10" />
       <param name="DatePattern" value="'.'yyyyMMdd" />
       <param name="Append" value="true" />
-      <param name="File" value="./logs/WxIntegrationTestController.log" />
+      <param name="File" value="./logs/WxIntegrationTestClient.log" />
       <param name="threshold" value="trace"/>
       <layout class="org.apache.log4j.PatternLayout">
         <param name="ConversionPattern" value="%d %-5p - %m%n" />
       </layout>
   </appender>
 
-  <category name="WxIntegrationTestController">
-    <appender-ref ref="WxIntegrationTestController"/>
+  <category name="WxIntegrationTestClient">
+    <appender-ref ref="WxIntegrationTestClient"/>
   </category>
 
 </log4j:configuration>

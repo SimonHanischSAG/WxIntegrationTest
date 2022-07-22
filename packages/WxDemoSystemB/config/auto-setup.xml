@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+	<autoConfig>
+	    <messaging>
+	        <um>
+	            <hosts>${pkg:WxIntegrationTestClient;um.admin.hosts}</hosts>
+	            <username>${pkg:WxIntegrationTestClient;um.admin.username}</username>
+	            <password>${pkg:WxIntegrationTestClient;um.admin.password}</password>
+				<initialContextFactory>com.pcbsys.nirvana.nSpace.NirvanaContextFactory</initialContextFactory>
+
+				<jmsConnectionFactory>
+				    <name>um_local</name>
+				    <connectionFactoryType>ConnectionFactory</connectionFactoryType>
+				    <connectionURL>${pkg:WxIntegrationTestClient;um.connectionURL}</connectionURL>
+				    <autoCreateResource>false</autoCreateResource>
+				</jmsConnectionFactory>
+
+				<queue>
+					<name>SystemBInQueue</name>
+					<storageProperties>
+						<autoMaintanence>true</autoMaintanence>
+					</storageProperties>
+				</queue>
+
+				<queue>
+					<name>internal/SystemBTransferInQueue</name>
+					<storageProperties>
+						<autoMaintanence>true</autoMaintanence>
+					</storageProperties>
+				</queue>
+
+            </um>
+		</messaging>
+    </autoConfig>
+</config>

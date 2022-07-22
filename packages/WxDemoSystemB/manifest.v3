@@ -5,6 +5,7 @@
   <value name="system_package">no</value>
   <value name="version">2.1.0</value>
   <record name="startup_services" javaclass="com.wm.util.Values">
+    <null name="wx.demo.systemB.admin:startup"/>
   </record>
   <null name="shutdown_services"/>
   <null name="replication_services"/>

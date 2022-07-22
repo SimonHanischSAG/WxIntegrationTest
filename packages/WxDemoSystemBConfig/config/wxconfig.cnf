@@ -1,4 +1,4 @@
-wx.config.env.LOCAL-DEV=wxconfig-LOCAL-DEV.cnf
+wx.config.env.LOCAL-DEV=../../../config/packages/WxDemoSystemBConfig/wxconfig-LOCAL-DEV.cnf
 wx.config.env.DEV=../../../config/packages/WxDemoSystemBConfig/wxconfig-DEV.cnf
 wx.config.env.TEST=../../../config/packages/WxDemoSystemBConfig/wxconfig-TEST.cnf
 wx.config.env.QA=../../../config/packages/WxDemoSystemBConfig/wxconfig-QA.cnf

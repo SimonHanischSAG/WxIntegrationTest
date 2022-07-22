@@ -1,13 +1,1 @@
-wx.config.env.LOCAL-DEV=../../../config/packages/WxIntegrationTestClient/wxconfig-LOCAL-DEV.cnf
-wx.config.env.DEV=../../../config/packages/WxIntegrationTestClient/wxconfig-DEV.cnf
-wx.config.env.TEST=../../../config/packages/WxIntegrationTestClient/wxconfig-TEST.cnf
-wx.config.env.QA=../../../config/packages/WxIntegrationTestClient/wxconfig-QA.cnf
-wx.config.env.PROD=../../../config/packages/WxIntegrationTestClient/wxconfig-PROD.cnf
-
 wx.config.incl=auto-setup.xml
-
-testclient.connection=DEFAULT_IS_JMS_CONNECTION
-
-testclient.clusterName=default
-testclient.hostname=localhost
-testclient.port=5555

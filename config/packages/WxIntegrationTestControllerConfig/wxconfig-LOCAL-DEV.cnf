@@ -1,0 +1,6 @@
+# For access from WmTestSuite to IS:
+# required:
+isTestUser=WxIntegrationTestController-Package
+isTestPassword=manage
+# optional:
+isTestUrl=http://localhost:5555

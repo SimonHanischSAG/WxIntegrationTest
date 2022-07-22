@@ -1,5 +1,0 @@
-# required:
-isTestUser=WxIntegrationTestController-Package
-isTestPassword=[[encrypted:isTestPassword]]
-# optional:
-isTestUrl=http://localhost:5555

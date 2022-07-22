@@ -1,6 +1,0 @@
-testclient.clusterName.env=MainCluster
-
-um.admin.hosts=nsp://localhost:9000
-um.admin.username=
-um.admin.password=
-um.connectionURL=nsp://localhost:9000

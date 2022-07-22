@@ -2,56 +2,18 @@
 <config>
 	<autoConfig>
 	    <messaging>
-	        <um>
-	            <hosts>${um.admin.hosts}</hosts>
-	            <username>${um.admin.username}</username>
-	            <password>${um.admin.password}</password>
-				<initialContextFactory>com.pcbsys.nirvana.nSpace.NirvanaContextFactory</initialContextFactory>
-
-				<jmsConnectionFactory>
-				    <name>um_local</name>
-				    <connectionFactoryType>ConnectionFactory</connectionFactoryType>
-				    <connectionURL>${um.connectionURL}</connectionURL>
-				    <autoCreateResource>false</autoCreateResource>
-				</jmsConnectionFactory>
-
-                <topic>
-                    <name>ClientToControllerTopic</name>
-                    <useJMSEngine>true</useJMSEngine>
-                    <storageProperties>
-                        <autoMaintanence>true</autoMaintanence>
-                    </storageProperties>
-                </topic>
-
-                <topic>
-                    <name>ControllerToOneClientOfClusterTopic</name>
-                    <useJMSEngine>true</useJMSEngine>
-                    <storageProperties>
-                        <autoMaintanence>true</autoMaintanence>
-                    </storageProperties>
-                </topic>
-
-                <topic>
-                    <name>ControllerToAllClientsOfClusterTopic</name>
-                    <useJMSEngine>true</useJMSEngine>
-                    <storageProperties>
-                        <autoMaintanence>true</autoMaintanence>
-                    </storageProperties>
-                </topic>
-
-            </um>
-            <integrationServer>
+	        <integrationServer>
             	<jmsTrigger>
-    				<triggerName>wx.integrationTest.client.trigger:jmsControllerToAllClientsOfClusterTopicTrigger</triggerName>
+    				<triggerName>wx.integrationTest.client.trigger:jmControllerToAllClientsOfClusterTopicTrigger</triggerName>
     				<package>WxIntegrationTestClient</package>
-    				<aliasName>${testclient.connection}</aliasName>
+    				<aliasName>${pkg:WxIntegrationTestClientConfig;testclient.connection}</aliasName>
     				<isConcurrent>true</isConcurrent>
     				<maxExecutionThreads>30</maxExecutionThreads>
     				<destinations>
-    					<destination>ControllerToAllClientsOfClusterTopic</destination>
+    					<destination>internal/ControllerToAllClientsOfClusterTopic</destination>
     					<destinationType>Topic</destinationType>
-    					<durableSubscriberName>WxIntegrationTestClient_${testclient.hostname}_${testclient.port}_Subscriber</durableSubscriberName>
-    					<messageSelector>clusterName = '${testclient.clusterName}' OR clusterName IS NULL</messageSelector>
+    					<durableSubscriberName>WxIntegrationTestClient_${pkg:WxIntegrationTestClientConfig;testclient.hostname}_${pkg:WxIntegrationTestClientConfig;testclient.port}_Subscriber</durableSubscriberName>
+    					<messageSelector>clusterName = '${pkg:WxIntegrationTestClientConfig;testclient.clusterName}' OR clusterName IS NULL</messageSelector>
     				</destinations>
     				<routingRules>
     					<ruleName>Rule1</ruleName>
@@ -67,14 +29,14 @@
             	<jmsTrigger>
     				<triggerName>wx.integrationTest.client.trigger:jmsControllerToOneClientOfClusterTopicTrigger</triggerName>
     				<package>WxIntegrationTestClient</package>
-    				<aliasName>${testclient.connection}</aliasName>
+    				<aliasName>${pkg:WxIntegrationTestClientConfig;testclient.connection}</aliasName>
     				<isConcurrent>true</isConcurrent>
     				<maxExecutionThreads>10</maxExecutionThreads>
     				<destinations>
-    					<destination>ControllerToOneClientOfClusterTopic</destination>
+    					<destination>internal/ControllerToOneClientOfClusterTopic</destination>
     					<destinationType>Topic</destinationType>
-    					<durableSubscriberName>WxIntegrationTestClient_${testclient.clusterName}_Subscriber</durableSubscriberName>
-    					<messageSelector>clusterName = '${testclient.clusterName}' OR clusterName IS NULL</messageSelector>
+    					<durableSubscriberName>WxIntegrationTestClient_${pkg:WxIntegrationTestClientConfig;testclient.clusterName}_Subscriber</durableSubscriberName>
+    					<messageSelector>clusterName = '${pkg:WxIntegrationTestClientConfig;testclient.clusterName}' OR clusterName IS NULL</messageSelector>
     				</destinations>
     				<routingRules>
     					<ruleName>Rule1</ruleName>

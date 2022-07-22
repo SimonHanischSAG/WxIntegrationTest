@@ -5,7 +5,7 @@
     <value name="testId">1003</value>
     <record name="sendJMSMessageRequest" javaclass="com.wm.data.ISMemDataImpl">
       <value name="connectionAliasName">DEFAULT_IS_JMS_CONNECTION</value>
-      <value name="destinationName">internal/SystemBTransferInboundQueue</value>
+      <value name="destinationName">internal/SystemBTransferInQueue</value>
       <value name="destinationType">QUEUE</value>
     </record>
     <record name="JMSMessage" javaclass="com.wm.data.ISMemDataImpl">

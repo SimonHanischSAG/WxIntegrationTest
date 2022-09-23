@@ -132,7 +132,7 @@ http://localhost:5555/rest/wx.integrationTest.controller.ws.runTestSuite?package
 
 Hint: You may have to configure the ACL etc. for this endpoint probably as it is preconfigured for the ACL "Internal". Furthermore you have to provide WxIntegrationTestController a user at least with the ACL "Developer" and configure it under: 
 
-C:\SoftwareAG\IntegrationServer\instances\default\config\packages\WxIntegrationTestController\wxconfig-<environmentType>.cnf
+C:\SoftwareAG\IntegrationServer\instances\default\config\packages\WxIntegrationTestController\wxconfig-&lt;environmentType&gt;.cnf
 
 like 
   

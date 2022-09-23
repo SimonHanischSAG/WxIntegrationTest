@@ -59,7 +59,7 @@ compare with above
 
 Configure 
 
-C:\SoftwareAG\IntegrationServer\instances\default\config\packages\WxIntegrationTestClient\wxconfig-<environmentType>.cnf
+C:\SoftwareAG\IntegrationServer\instances\default\config\packages\WxIntegrationTestClient\wxconfig-&lt;environmentType&gt;.cnf
 
 like
 

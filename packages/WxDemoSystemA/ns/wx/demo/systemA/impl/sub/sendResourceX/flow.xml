@@ -182,7 +182,7 @@
                       <value name="field_password">false</value>
                     </record>
                     <value name="is_public">false</value>
-                    <value name="field_name">metaData</value>
+                    <value name="field_name">wxMetaData</value>
                     <value name="field_type">record</value>
                     <value name="field_dim">0</value>
                     <value name="wrapper_type">IData</value>
@@ -508,7 +508,7 @@
           <value name="field_password">false</value>
         </record>
         <value name="is_public">false</value>
-        <value name="field_name">metaData</value>
+        <value name="field_name">wxMetaData</value>
         <value name="field_type">recref</value>
         <value name="field_dim">0</value>
         <value name="wrapper_type">IData</value>
@@ -517,7 +517,7 @@
         <value name="is_global">false</value>
         <value name="rec_closed">true</value>
         <value name="modifiable">true</value>
-        <value name="rec_ref">wx.resilience.doc:metaData</value>
+        <value name="rec_ref">wx.resilience.doc:wxMetaData</value>
       </record>
       <record javaclass="com.wm.util.Values">
         <value name="node_type">record</value>
@@ -606,7 +606,7 @@
 </DATA>
 </MAPSET>
 
-<MAPCOPY FROM="/metaData;4;0;wx.resilience.doc:metaData" TO="/JMSMessage;2;0/body;2;0/data(0);2;0/metaData;2;0">
+<MAPCOPY FROM="/wxMetaData;4;0;wx.resilience.doc:wxMetaData" TO="/JMSMessage;2;0/body;2;0/data(0);2;0/wxMetaData;2;0">
 </MAPCOPY>
 
 <MAPCOPY FROM="/resourceX;4;0;wx.demo.canonicals:resourceX" TO="/JMSMessage;2;0/body;2;0/data(0);2;0/payload;2;0">

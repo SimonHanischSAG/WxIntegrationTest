@@ -14,7 +14,7 @@
       </record>
       <record name="body" javaclass="com.wm.data.ISMemDataImpl">
         <record name="data" javaclass="com.wm.data.ISMemDataImpl">
-          <record name="metaData" javaclass="com.wm.data.ISMemDataImpl">
+          <record name="wxMetaData" javaclass="com.wm.data.ISMemDataImpl">
             <value name="uuid">7101ecb5-5e37-4441-995e-26a5e996bd43</value>
             <value name="type">resourceX</value>
             <value name="source">systemA</value>
@@ -31,7 +31,7 @@
     <record name="registerInterceptorRequest" javaclass="com.wm.data.ISMemDataImpl">
       <value name="serviceName">wx.demo.systemB.impl.sub:sendToSystemB</value>
       <array name="filterExpressionsList" type="value" depth="1">
-        <value>metaData.uuid == '7101ecb5-5e37-4441-995e-26a5e996bd43'</value>
+        <value>wxMetaData.uuid == '7101ecb5-5e37-4441-995e-26a5e996bd43'</value>
       </array>
       <value name="timeoutForInterceptionInSeconds">60</value>
     </record>

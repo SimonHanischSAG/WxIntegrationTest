@@ -345,7 +345,7 @@
       <value name="modifiable">true</value>
     </record>
   </record>
-  <value name="node_comment">metaData: metaData of request</value>
+  <value name="node_comment">wxMetaData: wxMetaData of request</value>
   <value name="stateless">yes</value>
   <value name="caching">no</value>
   <value name="prefetch">no</value>

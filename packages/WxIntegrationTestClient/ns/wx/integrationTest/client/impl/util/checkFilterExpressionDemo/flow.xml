@@ -5,7 +5,7 @@
 
   <!-- nodes -->
 
-<INVOKE TIMEOUT="" SERVICE="wx.resilience.pub.metaData:initializeMetaData" VALIDATE-IN="$none" VALIDATE-OUT="$none">
+<INVOKE TIMEOUT="" SERVICE="wx.resilience.pub.metaData:initializeWxMetaData" VALIDATE-IN="$none" VALIDATE-OUT="$none">
   <COMMENT></COMMENT>
 
   <!-- nodes -->
@@ -364,7 +364,7 @@
           <value name="field_password">false</value>
         </record>
         <value name="is_public">false</value>
-        <value name="field_name">metaData</value>
+        <value name="field_name">wxMetaData</value>
         <value name="field_type">recref</value>
         <value name="field_dim">0</value>
         <value name="wrapper_type">IData</value>
@@ -373,7 +373,7 @@
         <value name="is_global">false</value>
         <value name="rec_closed">true</value>
         <value name="modifiable">true</value>
-        <value name="rec_ref">wx.resilience.doc:metaData</value>
+        <value name="rec_ref">wx.resilience.doc:wxMetaData</value>
       </record>
     </array>
     <value name="modifiable">true</value>
@@ -440,7 +440,7 @@
           <value name="field_password">false</value>
         </record>
         <value name="is_public">false</value>
-        <value name="field_name">metaData</value>
+        <value name="field_name">wxMetaData</value>
         <value name="field_type">recref</value>
         <value name="field_dim">0</value>
         <value name="wrapper_type">IData</value>
@@ -449,7 +449,7 @@
         <value name="is_global">false</value>
         <value name="rec_closed">true</value>
         <value name="modifiable">true</value>
-        <value name="rec_ref">wx.resilience.doc:metaData</value>
+        <value name="rec_ref">wx.resilience.doc:wxMetaData</value>
       </record>
       <record javaclass="com.wm.util.Values">
         <value name="node_type">record</value>
@@ -689,7 +689,7 @@
           <value name="field_password">false</value>
         </record>
         <value name="is_public">false</value>
-        <value name="field_name">metaData</value>
+        <value name="field_name">wxMetaData</value>
         <value name="field_type">recref</value>
         <value name="field_dim">0</value>
         <value name="wrapper_type">IData</value>
@@ -698,7 +698,7 @@
         <value name="is_global">false</value>
         <value name="rec_closed">true</value>
         <value name="modifiable">true</value>
-        <value name="rec_ref">wx.resilience.doc:metaData</value>
+        <value name="rec_ref">wx.resilience.doc:wxMetaData</value>
       </record>
       <record javaclass="com.wm.util.Values">
         <value name="node_type">record</value>
@@ -744,13 +744,13 @@
 
   <!-- nodes -->
 
-<MAPDELETE FIELD="/metaData;4;0;wx.resilience.doc:metaData">
+<MAPDELETE FIELD="/wxMetaData;4;0;wx.resilience.doc:wxMetaData">
 </MAPDELETE>
 
 <MAPDELETE FIELD="/payload;2;0">
 </MAPDELETE>
 
-<MAPCOPY FROM="/metaData;4;0;wx.resilience.doc:metaData" TO="/wxMessage;4;0;wx.resilience.doc:wxMessage/metaData;2;0">
+<MAPCOPY FROM="/wxMetaData;4;0;wx.resilience.doc:wxMetaData" TO="/wxMessage;4;0;wx.resilience.doc:wxMessage/wxMetaData;2;0">
 </MAPCOPY>
 
 <MAPCOPY FROM="/payload;2;0" TO="/wxMessage;4;0;wx.resilience.doc:wxMessage/payload;2;0">
@@ -830,7 +830,7 @@
 <MAPDELETE FIELD="/wxMessage;4;0;wx.resilience.doc:wxMessage">
 </MAPDELETE>
 
-<MAPCOPY FROM="/wxMessage;4;0;wx.resilience.doc:wxMessage/metaData;2;0/type;1;0" TO="/JMSMessage;4;0;pub.jms:JMSMessage/header;2;0/JMSType;1;0">
+<MAPCOPY FROM="/wxMessage;4;0;wx.resilience.doc:wxMessage/wxMetaData;2;0/type;1;0" TO="/JMSMessage;4;0;pub.jms:JMSMessage/header;2;0/JMSType;1;0">
 </MAPCOPY>
 </MAP>
 
@@ -1894,7 +1894,7 @@
 </SEQUENCE>
 
 <SEQUENCE TIMEOUT="" EXIT-ON="FAILURE">
-  <COMMENT>JMSMessage.body.data.metaData.type==&#39;DESADV&#39;</COMMENT>
+  <COMMENT>JMSMessage.body.data.wxMetaData.type==&#39;DESADV&#39;</COMMENT>
 
   <!-- nodes -->
 
@@ -2003,7 +2003,7 @@
   <DATA ENCODING="XMLValues" I18N="true">
 
 <Values version="2.0">
-  <value name="xml">JMSMessage.body.data.metaData.type=='DESADV'</value>
+  <value name="xml">JMSMessage.body.data.wxMetaData.type=='DESADV'</value>
   <record name="type" javaclass="com.wm.util.Values">
     <value name="node_type">field</value>
     <value name="node_subtype">unknown</value>
@@ -2937,7 +2937,7 @@
 </SEQUENCE>
 
 <SEQUENCE TIMEOUT="" EXIT-ON="FAILURE">
-  <COMMENT>JMSMessage.body.data.metaData.customProperties[0].value==&#39;value1&#39; --&gt; exception --&gt; arrays does not work reliably!</COMMENT>
+  <COMMENT>JMSMessage.body.data.wxMetaData.customProperties[0].value==&#39;value1&#39; --&gt; exception --&gt; arrays does not work reliably!</COMMENT>
 
   <!-- nodes -->
 
@@ -3046,7 +3046,7 @@
   <DATA ENCODING="XMLValues" I18N="true">
 
 <Values version="2.0">
-  <value name="xml">JMSMessage.body.data.metaData.customProperties[0].value=='value1'</value>
+  <value name="xml">JMSMessage.body.data.wxMetaData.customProperties[0].value=='value1'</value>
   <record name="type" javaclass="com.wm.util.Values">
     <value name="node_type">field</value>
     <value name="node_subtype">unknown</value>

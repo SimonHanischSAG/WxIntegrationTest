@@ -10,7 +10,6 @@
         <number name="JMSXDeliveryCount" type="java.lang.Integer">1</number>
       </record>
       <record name="header" javaclass="com.wm.data.ISMemDataImpl">
-        <null name="JMSCorrelationID"/>
         <number name="JMSDeliveryMode" type="java.lang.Integer">2</number>
         <value name="JMSDestination">StatusTopic</value>
         <number name="JMSExpiration" type="java.lang.Long">0</number>

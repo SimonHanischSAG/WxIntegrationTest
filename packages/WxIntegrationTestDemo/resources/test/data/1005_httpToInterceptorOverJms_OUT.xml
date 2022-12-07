@@ -3,7 +3,7 @@
 <IDataXMLCoder version="1.0">
   <record javaclass="com.wm.util.Values">
     <value name="@WxResilience.logging.function@">WxDemoSystemB</value>
-    <record name="metaData" javaclass="com.wm.data.ISMemDataImpl">
+    <record name="wxMetaData" javaclass="com.wm.data.ISMemDataImpl">
       <value name="type">resourceX</value>
       <value name="source">SystemA</value>
       <value name="destination">SystemB</value>

@@ -117,7 +117,7 @@
             <value name="field_password">false</value>
           </record>
           <value name="is_public">false</value>
-          <value name="field_name">metaData</value>
+          <value name="field_name">wxMetaData</value>
           <value name="field_type">recref</value>
           <value name="field_dim">0</value>
           <value name="wrapper_type">IData</value>
@@ -126,13 +126,13 @@
           <value name="is_global">false</value>
           <value name="rec_closed">true</value>
           <value name="modifiable">true</value>
-          <value name="rec_ref">wx.resilience.doc:metaData</value>
+          <value name="rec_ref">wx.resilience.doc:wxMetaData</value>
         </record>
       </array>
       <value name="modifiable">true</value>
     </record>
   </record>
-  <value name="node_comment">metaData: metaData of request</value>
+  <value name="node_comment">wxMetaData: wxMetaData of request</value>
   <value name="stateless">yes</value>
   <value name="caching">no</value>
   <value name="prefetch">no</value>

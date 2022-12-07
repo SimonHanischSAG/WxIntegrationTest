@@ -78,14 +78,14 @@
             <value name="node_type">record</value>
             <value name="node_subtype">unknown</value>
             <value name="is_public">false</value>
-            <value name="field_name">metaData</value>
+            <value name="field_name">wxMetaData</value>
             <value name="field_type">recref</value>
             <value name="field_dim">0</value>
             <value name="nillable">true</value>
             <value name="form_qualified">false</value>
             <value name="is_global">false</value>
             <value name="modifiable">true</value>
-            <value name="rec_ref">wx.resilience.doc:metaData</value>
+            <value name="rec_ref">wx.resilience.doc:wxMetaData</value>
           </record>
         </array>
         <value name="rec_closed">true</value>
@@ -137,7 +137,7 @@
           <value name="field_password">false</value>
         </record>
         <value name="is_public">false</value>
-        <value name="field_name">metaData</value>
+        <value name="field_name">wxMetaData</value>
         <value name="field_type">recref</value>
         <value name="field_dim">0</value>
         <value name="field_opt">true</value>
@@ -147,7 +147,7 @@
         <value name="is_global">false</value>
         <value name="rec_closed">true</value>
         <value name="modifiable">true</value>
-        <value name="rec_ref">wx.resilience.doc:metaData</value>
+        <value name="rec_ref">wx.resilience.doc:wxMetaData</value>
       </record>
       <record javaclass="com.wm.util.Values">
         <value name="node_type">record</value>
@@ -181,7 +181,7 @@
 <MAPCOPY FROM="/JMSMessage;4;0;pub.jms:JMSMessage" TO="/pipeline;2;0/JMSMessage;4;0;pub.jms:JMSMessage">
 </MAPCOPY>
 
-<MAPCOPY FROM="/metaData;4;0;wx.resilience.doc:metaData" TO="/pipeline;2;0/metaData;4;0;wx.resilience.doc:metaData">
+<MAPCOPY FROM="/wxMetaData;4;0;wx.resilience.doc:wxMetaData" TO="/pipeline;2;0/wxMetaData;4;0;wx.resilience.doc:wxMetaData">
 </MAPCOPY>
 </MAP>
 
@@ -246,14 +246,14 @@
             <value name="node_type">record</value>
             <value name="node_subtype">unknown</value>
             <value name="is_public">false</value>
-            <value name="field_name">metaData</value>
+            <value name="field_name">wxMetaData</value>
             <value name="field_type">recref</value>
             <value name="field_dim">0</value>
             <value name="nillable">true</value>
             <value name="form_qualified">false</value>
             <value name="is_global">false</value>
             <value name="modifiable">true</value>
-            <value name="rec_ref">wx.resilience.doc:metaData</value>
+            <value name="rec_ref">wx.resilience.doc:wxMetaData</value>
           </record>
         </array>
         <value name="modifiable">true</value>
@@ -267,7 +267,7 @@
           <value name="field_password">false</value>
         </record>
         <value name="is_public">false</value>
-        <value name="field_name">metaData</value>
+        <value name="field_name">wxMetaData</value>
         <value name="field_type">recref</value>
         <value name="field_dim">0</value>
         <value name="field_opt">true</value>
@@ -277,7 +277,7 @@
         <value name="is_global">false</value>
         <value name="rec_closed">true</value>
         <value name="modifiable">true</value>
-        <value name="rec_ref">wx.resilience.doc:metaData</value>
+        <value name="rec_ref">wx.resilience.doc:wxMetaData</value>
       </record>
       <record javaclass="com.wm.util.Values">
         <value name="node_type">record</value>

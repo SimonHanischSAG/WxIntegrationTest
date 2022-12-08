@@ -150,7 +150,7 @@ public final class util
 	{
 		// --- <<IS-START(getHostname)>> ---
 		// @sigtype java 3.5
-		// [o] field:0:required hostname
+		// [o] field:0:required result
 		String hostname = null;
 		// pipeline
 		
@@ -164,6 +164,7 @@ public final class util
 		IDataUtil.put(pipelineCursor, "result", hostname);
 		pipelineCursor.destroy();
 		
+			
 		// --- <<IS-END>> ---
 
                 
@@ -319,6 +320,7 @@ public final class util
 		}
 	}
 	
+		
 		
 		
 	// --- <<IS-END-SHARED>> ---

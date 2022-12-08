@@ -23,12 +23,13 @@ YnVnTG9nIiwgaW5wdXQpOw0KCX0gY2F0Y2ggKEV4Y2VwdGlvbiBlKSB7DQoJfQ0KfQ0KDQoJDQo=
 </value>
   <value name="encodeutf8">true</value>
   <array name="imports" type="value" depth="1">
+    <value>java.nio.file.Files</value>
+    <value>java.nio.file.Path</value>
+    <value>java.nio.file.Paths</value>
     <value>java.util.Date</value>
     <value>java.util.Map.Entry</value>
     <value>java.util.Set</value>
-    <value>java.util.Vector</value>
     <value>java.util.concurrent.ConcurrentHashMap</value>
-    <value>java.util.function.BiConsumer</value>
     <value>com.softwareag.util.IDataMap</value>
   </array>
 </Values>

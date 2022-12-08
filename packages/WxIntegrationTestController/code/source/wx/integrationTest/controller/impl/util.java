@@ -6,8 +6,6 @@ import com.wm.data.*;
 import com.wm.util.Values;
 import com.wm.app.b2b.server.Service;
 import com.wm.app.b2b.server.ServiceException;
-
-import java.io.IOException;
 // --- <<IS-START-IMPORTS>> ---
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -58,7 +56,7 @@ public final class util
 		// --- <<IS-START(notifyPollingService)>> ---
 		// @sigtype java 3.5
 		// [i] field:0:required id
-		// [i] record:0:required pipeline
+		// [i] recref:0:required genericResponse wx.integrationTest.doc.response:genericResponse
 		IDataMap pipeMap = new IDataMap(pipeline);
 		String id = pipeMap.getAsString("id");
 		if (id == null) {

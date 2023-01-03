@@ -5,7 +5,7 @@
 
   <!-- nodes -->
 
-<INVOKE TIMEOUT="" SERVICE="wx.resilience.pub.jms:sendWxMessageAsJson" VALIDATE-IN="$none" VALIDATE-OUT="$none">
+<INVOKE TIMEOUT="" SERVICE="wx.resilience.pub.jms:sendWxMessage" VALIDATE-IN="$none" VALIDATE-OUT="$none">
   <COMMENT></COMMENT>
 
   <!-- nodes -->
@@ -219,29 +219,9 @@
                           <value name="field_password">false</value>
                         </record>
                         <value name="is_public">false</value>
-                        <value name="field_name">uuid</value>
+                        <value name="field_name">correlationID</value>
                         <value name="field_type">string</value>
                         <value name="field_dim">0</value>
-                        <array name="field_options" type="value" depth="1">
-                        </array>
-                        <value name="nillable">true</value>
-                        <value name="form_qualified">false</value>
-                        <value name="is_global">false</value>
-                      </record>
-                      <record javaclass="com.wm.util.Values">
-                        <value name="node_type">record</value>
-                        <value name="node_subtype">unknown</value>
-                        <value name="node_comment"></value>
-                        <record name="node_hints" javaclass="com.wm.util.Values">
-                          <value name="field_usereditable">true</value>
-                          <value name="field_largerEditor">false</value>
-                          <value name="field_password">false</value>
-                        </record>
-                        <value name="is_public">false</value>
-                        <value name="field_name">correlationUuid</value>
-                        <value name="field_type">string</value>
-                        <value name="field_dim">0</value>
-                        <value name="field_opt">true</value>
                         <array name="field_options" type="value" depth="1">
                         </array>
                         <value name="nillable">true</value>
@@ -454,7 +434,6 @@
         <value name="field_name">destinationType</value>
         <value name="field_type">string</value>
         <value name="field_dim">0</value>
-        <value name="field_opt">true</value>
         <array name="field_options" type="value" depth="1">
           <value>QUEUE</value>
           <value>TOPIC</value>
@@ -477,6 +456,27 @@
         <value name="field_dim">0</value>
         <value name="field_opt">true</value>
         <value name="wrapper_type">java.lang.Boolean</value>
+        <value name="nillable">true</value>
+        <value name="form_qualified">false</value>
+        <value name="is_global">false</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="node_subtype">unknown</value>
+        <value name="node_comment"></value>
+        <record name="node_hints" javaclass="com.wm.util.Values">
+          <value name="field_usereditable">false</value>
+          <value name="field_largerEditor">false</value>
+          <value name="field_password">false</value>
+        </record>
+        <value name="is_public">false</value>
+        <value name="field_name">sendAsJson</value>
+        <value name="field_type">string</value>
+        <value name="field_dim">0</value>
+        <value name="field_opt">true</value>
+        <array name="field_options" type="value" depth="1">
+          <value>true</value>
+        </array>
         <value name="nillable">true</value>
         <value name="form_qualified">false</value>
         <value name="is_global">false</value>
@@ -640,6 +640,36 @@
 </Values>
 </DATA>
 </MAPSET>
+
+<MAPSET NAME="Setter" OVERWRITE="true" VARIABLES="false" GLOBALVARIABLES="false" FIELD="/sendAsJson;1;0">
+  <DATA ENCODING="XMLValues" I18N="true">
+
+<Values version="2.0">
+  <value name="xml">true</value>
+  <record name="type" javaclass="com.wm.util.Values">
+    <value name="node_type">record</value>
+    <value name="node_subtype">unknown</value>
+    <value name="node_comment"></value>
+    <record name="node_hints" javaclass="com.wm.util.Values">
+      <value name="field_usereditable">false</value>
+      <value name="field_largerEditor">false</value>
+      <value name="field_password">false</value>
+    </record>
+    <value name="is_public">false</value>
+    <value name="field_name">sendAsJson</value>
+    <value name="field_type">string</value>
+    <value name="field_dim">0</value>
+    <value name="field_opt">true</value>
+    <array name="field_options" type="value" depth="1">
+      <value>true</value>
+    </array>
+    <value name="nillable">true</value>
+    <value name="form_qualified">false</value>
+    <value name="is_global">false</value>
+  </record>
+</Values>
+</DATA>
+</MAPSET>
 </MAP>
 
 <MAP MODE="OUTPUT">
@@ -779,6 +809,17 @@
         <value name="rec_ref">wx.resilience.doc:wxMetaData</value>
       </record>
       <record javaclass="com.wm.util.Values">
+        <value name="node_type">unknown</value>
+        <value name="node_subtype">unknown</value>
+        <value name="is_public">false</value>
+        <value name="field_name">sendAsJson</value>
+        <value name="field_type">string</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+        <value name="form_qualified">false</value>
+        <value name="is_global">false</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
         <value name="node_type">record</value>
         <value name="node_subtype">unknown</value>
         <value name="node_comment"></value>
@@ -915,6 +956,9 @@
 </MAPDELETE>
 
 <MAPDELETE FIELD="/payload;2;0">
+</MAPDELETE>
+
+<MAPDELETE FIELD="/sendAsJson;1;0">
 </MAPDELETE>
 </MAP>
 </INVOKE>

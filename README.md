@@ -33,8 +33,6 @@ Follow the documentation of WxInterceptor and ensure that there are the followin
 Under C:\SoftwareAG\IntegrationServer\instances\default\lib\jars\custom:
 <ol>
   <li>commons-jexl3-3.1</li>
-  <li>commons-lang3-3.6</li>
-  <li>commons-logging-1.2</li>
   <li>commons-math3-3.3</li>
   <li>wxinterceptor_server-1.3.1</li>
 </ol>

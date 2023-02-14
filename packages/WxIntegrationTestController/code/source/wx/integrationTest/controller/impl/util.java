@@ -152,10 +152,13 @@ public final class util
 		
 		if (foundAndRemovedValue == null) {
 			throw new ServiceException("pollForMessage: Timeout during polling for response for id: " + id);
+		} else if (foundResponseCount < waitForResponseFromXClientsInt){
+			throw new ServiceException("pollForMessage: Timeout during polling for " + waitForResponseFromXClients + " response for id: " + id + ". Got only " + foundResponseCount + " responses");
 		}
 		// log("SITC: length of arrivedResponses after polling:" +
 		// arrivedResponses.size());
 		
+			
 			
 			
 		// --- <<IS-END>> ---
@@ -284,6 +287,7 @@ public final class util
 		}
 	}
 	
+		
 		
 	// --- <<IS-END-SHARED>> ---
 }

@@ -729,7 +729,7 @@
 </MAP>
 </INVOKE>
 
-<INVOKE TIMEOUT="" SERVICE="wx.integrationTest.client.impl:addCustomPropertiesForTest" VALIDATE-IN="$none" VALIDATE-OUT="$none">
+<INVOKE TIMEOUT="" SERVICE="wx.integrationTest.controller.impl:addCustomPropertiesForTest" VALIDATE-IN="$none" VALIDATE-OUT="$none">
   <COMMENT></COMMENT>
 </INVOKE>
 

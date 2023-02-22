@@ -22,6 +22,7 @@ ZG9JbnZva2UoInB1Yi5mbG93IiwgImRlYnVnTG9nIiwgaW5wdXQpOwoJfSBjYXRjaCAoRXhjZXB0
 aW9uIGUpIHsKCX0KfQoKCQoJ</value>
   <value name="encodeutf8">true</value>
   <array name="imports" type="value" depth="1">
+    <value>java.io.IOException</value>
     <value>java.nio.file.Files</value>
     <value>java.nio.file.Path</value>
     <value>java.nio.file.Paths</value>

@@ -2,13 +2,6 @@
 
 <IDataXMLCoder version="1.0">
   <record javaclass="com.wm.util.Values">
-    <value name="@WxResilience.logging.function@">WxDemoSystemB</value>
-    <record name="wxMetaData" javaclass="com.wm.data.ISMemDataImpl">
-      <value name="uuid">7101ecb5-5e37-4441-995e-26a5e996bd43</value>
-      <value name="type">resourceX</value>
-      <value name="source">systemA</value>
-      <value name="destination">systemB</value>
-    </record>
     <record name="payload" javaclass="com.wm.data.ISMemDataImpl">
       <value name="fieldInCapital">ABC</value>
       <value name="numberWithLeadingZeros">0042</value>

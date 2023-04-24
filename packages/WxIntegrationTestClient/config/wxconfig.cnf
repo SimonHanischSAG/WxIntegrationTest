@@ -8,6 +8,6 @@ wx.config.incl=auto-setup.xml
 
 testclient.connection=DEFAULT_IS_JMS_CONNECTION
 
-testclient.clusterName=default
-testclient.hostname=localhost
-testclient.port=5555
+testclient.clusterName=LocalDevIS
+testclient.hostname=se1-esb-e024.ads.schwarz
+testclient.port=10055

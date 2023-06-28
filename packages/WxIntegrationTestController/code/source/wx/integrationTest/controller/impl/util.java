@@ -7,9 +7,15 @@ import com.wm.util.Values;
 import com.wm.app.b2b.server.Service;
 import com.wm.app.b2b.server.ServiceException;
 // --- <<IS-START-IMPORTS>> ---
+import java.io.IOException;
+import java.nio.file.FileSystems;
+import java.nio.file.FileVisitResult;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.nio.file.PathMatcher;
 import java.nio.file.Paths;
+import java.nio.file.SimpleFileVisitor;
+import java.nio.file.attribute.BasicFileAttributes;
 import java.util.Date;
 import java.util.Map.Entry;
 import java.util.Set;
@@ -192,6 +198,7 @@ public final class util
 		} catch (IOException e) {
 			throw new ServiceException(e);
 		}		
+			
 		// --- <<IS-END>> ---
 
                 
@@ -230,19 +237,33 @@ public final class util
 		// --- <<IS-START(resolvePath)>> ---
 		// @sigtype java 3.5
 		// [i] field:0:required directory
-		// [i] field:0:required relativePath
+		// [i] field:0:required pattern
 		// [o] field:0:required outputPath
 		final IDataMap map = new IDataMap(pipeline);
 		final String dirStr = map.getAsString("directory");
+		final String pattern = map.getAsString("pattern");
 		if (dirStr == null) {
 			throw new NullPointerException("Missing parameter: directory");
 		}
-		final Path dir = Paths.get(dirStr);
-		final String relativePath = map.getAsString("relativePath");
-		if (relativePath == null) {
-			throw new NullPointerException("Missing parameter: relativePath");
+		if (pattern == null) {
+			throw new NullPointerException("Missing parameter: pattern");
 		}
-		map.put("outputPath", dir.resolve(relativePath).toString());
+		final Path dir = Paths.get(dirStr).getParent();
+		
+		try {
+			Files.walkFileTree(dir, new SimpleFileVisitor<Path>() {
+				@Override
+				public FileVisitResult visitFile(Path filePath, BasicFileAttributes attrs) throws IOException {
+					PathMatcher matcher = FileSystems.getDefault().getPathMatcher("glob:" + pattern);
+					if (matcher.matches(filePath.getFileName())) {
+						map.put("outputPath", filePath.toString());
+					}
+					return FileVisitResult.CONTINUE;
+				}
+			});
+		} catch (IOException e) {
+			throw new ServiceException(e);
+		}
 		// --- <<IS-END>> ---
 
                 
@@ -287,6 +308,7 @@ public final class util
 		}
 	}
 	
+		
 		
 		
 	// --- <<IS-END-SHARED>> ---

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+	<autoConfig>
+		<accessControl>
+			<!-- Enable if you want to allow Anonymous access: -->
+			<!--
+			<service name="wx.demo.systemA.pub.ws.resourceX:_get">
+				<executeACL enforce="topLevelOnly">Anonymous</executeACL>  
+			</service>
+			<service name="wx.demo.systemA.pub.ws.resourceX:_post">
+				<executeACL enforce="topLevelOnly">Anonymous</executeACL>  
+			</service>
+			-->
+		</accessControl>
+	</autoConfig>
+</config>

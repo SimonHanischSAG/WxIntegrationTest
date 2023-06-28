@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration packages="wx.log">
+  <Appenders>
+    <SchwarzRollingFile name="WxIntegrationTestController" fileName="./logs/WxIntegrationTestController.log"/>
+  </Appenders>
+  <Loggers>
+    <Logger name="WxIntegrationTestController" level="info" additivity="false">
+      <AppenderRef ref="WxIntegrationTestController"/>
+    </Logger>
+  </Loggers>
+</Configuration>

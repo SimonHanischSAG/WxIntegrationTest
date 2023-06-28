@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration packages="wx.log">
+  <Appenders>
+    <SchwarzRollingFile name="WxDemoSystemA" fileName="./logs/WxDemoSystemA.log"/>
+  </Appenders>
+  <Loggers>
+    <Logger name="WxDemoSystemA" level="info" additivity="false">
+      <AppenderRef ref="WxDemoSystemA"/>
+    </Logger>
+  </Loggers>
+</Configuration>

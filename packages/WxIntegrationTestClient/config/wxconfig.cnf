@@ -1,4 +1,5 @@
 wx.config.env.LOCAL-DEV=../../../config/packages/WxIntegrationTestClient/wxconfig-LOCAL-DEV.cnf
+wx.config.env.LOCAL=../../../config/packages/WxIntegrationTestClient/wxconfig-LOCAL.cnf
 wx.config.env.DEV=../../../config/packages/WxIntegrationTestClient/wxconfig-DEV.cnf
 wx.config.env.TEST=../../../config/packages/WxIntegrationTestClient/wxconfig-TEST.cnf
 wx.config.env.QA=../../../config/packages/WxIntegrationTestClient/wxconfig-QA.cnf
@@ -8,6 +9,6 @@ wx.config.incl=auto-setup.xml
 
 testclient.connection=DEFAULT_IS_JMS_CONNECTION
 
-testclient.clusterName=LocalDevIS
-testclient.hostname=se1-esb-e024.ads.schwarz
-testclient.port=10055
+testclient.clusterName=MainCluster
+testclient.hostname=sag-6j1zvl3.fritz.box
+testclient.port=5556

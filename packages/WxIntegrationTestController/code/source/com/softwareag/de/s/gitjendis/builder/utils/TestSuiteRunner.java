@@ -307,7 +307,7 @@ public class TestSuiteRunner {
 				+ "common/lib/ext/jackson-dataformat-yaml.jar;common/lib/ext/jackson-module-jaxb-annotations.jar;"
 				+ "common/lib/wm-isclient.jar;common/lib/ext/icu4j.jar;"
 				+ "common/lib/ext/enttoolkit.jar;IntegrationServer/lib/wm-isserver.jar;"
-				+ "common/lib/wm-g11nutils.jar;common/lib/glassfish/gf.javax.mail.jar;"
+				+ "common/lib/wm-g11nutils.jar;common/lib/glassfish/gf.javax.mail.jar;common/lib/glassfish/gf.webservices-api-osgi.jar;"
 				+ "common/lib/ant/ant-contrib-1.0b3.jar;common/lib/ant/lib/ant-launcher.jar;"
 				+ "common/lib/ant/lib/ant.jar;common/lib/ant/lib/ant-junit.jar;common/lib/ant/lib/ant-junit4.jar";
 		for (StringTokenizer st = new StringTokenizer(jarFileList, ";");  st.hasMoreTokens();  ) {

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Configuration packages="wx.log">
-  <Appenders>
-    <SchwarzRollingFile name="WxIntegrationTestClient" fileName="./logs/WxIntegrationTestClient.log"/>
-  </Appenders>
-  <Loggers>
-    <Logger name="WxIntegrationTestClient" level="info" additivity="false">
-      <AppenderRef ref="WxIntegrationTestClient"/>
-    </Logger>
-  </Loggers>
+	<Appenders>
+		<WxLog4j2RollingFile name="WxIntegrationTestClient" fileName="./logs/WxIntegrationTestClient.log"/>
+	</Appenders>
+	<Loggers>
+		<Logger name="WxIntegrationTestClient" level="info" additivity="false">
+			<AppenderRef ref="WxIntegrationTestClient"/>
+		</Logger>
+	</Loggers>
 </Configuration>
